@@ -1,0 +1,33 @@
+<!xml version="1.0" encoding="utf-8"!>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>test</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8">
+<link rel="stylesheet" type="text/css" href="../static/styles/css/test.css">
+	<!--[if lte IE 8]>
+	<script defer="defer" type="text/javascript" src="../static/scripts/eis.js"></script> 
+	<![endif]-->
+	<!--[if IE 6]><!-->        
+		<script>
+         var eis = {frameRate:3};
+   </script>
+	<!--<![endif]-->	   
+</head>
+<body>	
+	
+<span id="svgtest" type="image/svg+xml" width="1200" height="600">
+   <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+      <rect x="240" y="180" width="30" height="30" style="fill: rgb(134, 22, 22); stroke: black">
+      </rect>  
+      <g>  
+         <rect x="0" y="0" width="30" height="30" style="fill: gray; stroke: black">
+          </rect>        
+         <animateMotion from="0,0" to="590,290" dur="2s"  repeatDur="5s" fill="freeze"/>       
+
+         </g> 
+   </svg>
+   
+	</span>		
+</body>
+</html>

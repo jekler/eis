@@ -1,0 +1,126 @@
+<!--
+EIS (Eight's IE SVG)
+licensed for use under the GNU Lesser General Public License (LGPL) Version 3.
+
+Copyright © 2023 Beijing Manhuiweidu Technology Co., Ltd.
+
+You may find more information @ https://github.com/jekler/eis
+
+This file is part of EIS (Eight's IE SVG).
+
+EIS is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License (LGPL) Version 3 as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+EIS is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License (and the GNU Lesser General Public License) along with EIS. If not, see https://www.gnu.org/licenses/.
+-->
+<PUBLIC:COMPONENT lightWeight="true">
+<PUBLIC:ATTACH EVENT="oncontentready" FOR="element" ONEVENT="init()" />
+<PUBLIC:ATTACH EVENT="ondocumentready" FOR="element" ONEVENT="init()" />
+<PUBLIC:ATTACH EVENT="ondetach" FOR="element" ONEVENT="cleanup()" />
+<script type="text/javascript">
+var el = element,
+    doc = el.document,
+    docMode = doc.documentMode || 0;
+
+if (!window[ 'eis' ]) {
+    window[ 'eis' ] = {};
+};
+
+if (!window[ 'eis' ]['attach']) {
+    if (!window[ 'eis' ]['queue']) window[ 'eis' ]['queue'] = {}; 
+    window[ 'eis' ]['attach'] = function( el ) {
+        this.queue[ el[ 'uniqueID' ] ] = el;
+    };
+
+    window[ 'eis' ]['detach'] = function( el ) {
+        delete this.queue[ el[ 'uniqueID' ] ];
+    };
+};
+if ( !window[ 'EIS' ] && !window[ 'eis' ]['script']) {
+    window[ 'eis' ]['script'] = true;
+    (function() {
+        var styleSheetRE, checkStyleSheets,
+            baseUrl, tester, isIE6, script;
+
+        tester = doc.createElement('div');
+        tester.innerHTML = '<!--[if IE 6]><i></i><![endif]-->';
+        isIE6 = tester.getElementsByTagName('i')[0];
+
+        baseUrl = doc.location.href.match(/eis-js-path=([^&]+)/);
+        if( baseUrl ) {
+            baseUrl = decodeURIComponent(baseUrl[1]);
+        }
+        if( !baseUrl ) {
+            baseUrl = doc.documentElement.currentStyle.getAttribute( ( isIE6 ? '' : '-' ) + 'eis-js-path' );
+        }
+        if( !baseUrl ) {
+            styleSheetRE = /BEHAVIOR: url\(([^\)]*eis[^\)]*)/i;
+            checkStyleSheets = function( styleSheets ) {
+                var i = styleSheets.length,
+                    url, match;
+                while( i-- ) {
+                    match = styleSheets[ i ].cssText.match( styleSheetRE );
+                    url = match ?
+                        match[ 1 ].substring( 0, match[ 1 ].lastIndexOf( '/' )) :
+                        checkStyleSheets( styleSheets[ i ].imports );
+                    if( url ) {
+                        break;
+                    }
+                }
+                return url;
+            };
+            baseUrl = checkStyleSheets( doc.styleSheets );
+        }
+        if( !baseUrl ) baseUrl = "";
+        script = doc.createElement( 'script' );
+        script.onreadystatechange = function() {
+            var eis = window[ 'eis' ],
+                queue = eis[ 'queue' ],
+                rs = script.readyState,
+                id;
+            if ( queue && ( rs === 'complete' || rs === 'loaded' ) ) {
+                if ( 'version' in eis ) {
+                    for( id in queue ) {
+                        if ( queue.hasOwnProperty( id ) ) {
+                            eis[ 'attach' ]( queue[ id ] );
+                        }
+                    }
+                    queue = void 0;
+                }
+            }
+        };
+        script.src = baseUrl ? baseUrl + '/eis.js': 'eis.js';
+	script.defer = 'defer';
+        ( doc.getElementsByTagName( 'head' )[0] || doc.body ).appendChild( script );
+    })();
+}
+
+function init() {
+    if ( el && doc.media !== 'print' ) { 
+        var eis = window[ 'eis' ];
+        if (eis) eis[ 'attach' ]( el );
+        var eis = window[ 'EIS' ];
+        if( eis ) {
+            eis._htc();
+        }
+    }
+}
+
+function cleanup() {
+    if ( el && doc.media !== 'print' ) {
+        var eis = window[ 'eis' ];
+        if ( eis ) {
+            eis[ 'detach' ]( el );
+        }
+    }
+    el = void 0;
+}
+
+if( el.readyState === 'complete' ) {
+    init();
+}
+
+</script>
+<script type="text/vbscript"></script>
+</PUBLIC:COMPONENT>

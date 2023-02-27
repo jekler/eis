@@ -1,0 +1,56 @@
+<!xml version="1.0" encoding="utf-8"!>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>test</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8">
+<link rel="stylesheet" type="text/css" href="../static/styles/css/test.css">
+	<!--[if lte IE 8]>
+	<script defer="defer" type="text/javascript" src="../static/scripts/eis.js"></script> 
+	<![endif]-->
+	<!--[if IE 6]><!-->        
+	<!--<![endif]-->	   
+</head>
+<body>	
+<script id="svgtest" type="image/svg+xml" width="600" height="300">
+   <svg viewBox="0 0 240 80" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+         <font-face font-family="manhuiweidu">
+           <font-face-src>
+             <font-face-uri xlink:href="..\static\styles\commons\fonts\manhuiweidu.ttf" />
+           </font-face-src>
+         </font-face>
+         <linearGradient id="Gradient1">
+            <stop class="stop1" offset="0%"/>
+            <stop class="stop2" offset="50%"/>
+            <stop class="stop3" offset="100%"/>
+         </linearGradient>
+         <linearGradient id="Gradient2" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="red"/>
+            <stop offset="50%" stop-color="black" stop-opacity="0"/>
+            <stop offset="100%" stop-color="blue"/>
+         </linearGradient>        
+       </defs>
+       <style type="text/css"><![CDATA[
+         #logo { fill: url(#Gradient2); }
+         .stop1 { stop-color: red; }
+         .stop2 { stop-color: black; stop-opacity: 0; }
+         .stop3 { stop-color: blue; }
+        ]]></style>       
+        <g>
+       <text id="logo" x="20" y="35" font-family="Arial" fill="red" font-size="36px"> &#xf000; 中文雅黑 work unfortunately
+
+        <animate id="fade" attributeName="fill" attributeType="XML"
+        from="white" to="yellow" begin="0s;fade.end" dur="6s" /> 
+       </text>
+        
+        </g>
+      <text x="20" y="35" class="small">My</text>
+      <text x="40" y="35" class="heavy">cat</text>
+      <text x="55" y="55" class="small">is</text>
+      <text x="65" y="55" class="Rrrrr">Grumpy!</text>
+    </svg>
+   
+	</script>		
+</body>
+</html>

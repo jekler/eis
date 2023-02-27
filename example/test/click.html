@@ -1,0 +1,30 @@
+<!xml version="1.0" encoding="utf-8"!>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>test</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8">
+<link rel="stylesheet" type="text/css" href="../static/styles/css/test.css">
+	<!--[if lte IE 8]>
+	<script defer="defer" type="text/javascript" src="../static/scripts/eis.js"></script> 
+	<![endif]-->
+	<!--[if IE 6]><!-->        
+		<script>
+			var SVGAnimateSpeed = 6;
+		</script>
+	<!--<![endif]-->	
+</head>
+<body>	
+		<div id="test">#123456</div>		
+<span  type="image/svg+xml" width="320" height="320">
+ <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <circle
+	id="circle"
+    cx="100"
+    cy="100"
+    r="100"
+    onclick="evt.target.setAttribute('fill', document.getElementById('test').innerHTML); document.getElementById('test').innerHTML='#456789'" />
+</svg>
+	</span>		
+</body>
+</html>

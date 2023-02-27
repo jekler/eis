@@ -1,0 +1,1096 @@
+﻿2014-2-10 version 15 (Commit: 6b1effa5e1602a1cffab4d270788efd08d56a697)
+1, toolにbase.jsの追加
+2, getStartPositionOfCharメソッドに関するスペックを追加
+3, SVGTextContentElementの修正
+4, チケット #30742　「linking-a-09-b.svgでテキストが表示されない不具合」を修正
+5, getStartPositionOfCharメソッドの軽量化
+6, text要素とtspan要素におけるテキスト表示アルゴリズムの変更
+7, SVGTextPositioningElementの変数の整理
+8, SVGAElementの_tarプロパティの挿入方式を変更
+9, 個々のdiv要素ごとにdisplayプロパティを適用させるのをやめて改善
+
+2013-12-27 version 14 (Commit: 8559c5f74f7b66e8f31785aa8c8df465fa6712ad)
+1, script要素などのファイル読み込みに関して、他のブラウザと同様、非同期処理から同期処理に変更
+2, funcproto用のサンプル画像「funcprotosample.svg」を同梱
+3, openfile.jsとの連携をしやすいように改良した
+4, createAttributeNSメソッドに不必要な処理があったので、削除して軽量化
+5, getElementsByTagNameNSメソッドの軽量化
+6, applyメソッドをcallメソッドに変更して、字数を削減
+7, hasChildNodesメソッドと、hasAttributesメソッドの軽量化
+8, appendChildメソッドの軽量化
+9, setNamedItemNSメソッドの条件式の改善
+10, getAttributeNodeNSメソッドの軽量化
+11, replaceChildメソッドの軽量化
+12, 例外処理を見直して、removeChildメソッドの軽量化
+13, insertBeforeメソッドの軽量化
+14, setNamedItemNSメソッドとgetNamedItemNSメソッドの軽量化
+15, substringDataメソッドreplaceDataメソッドの軽量化
+16, importNodeメソッドの軽量化
+17, createElementNSメソッドの軽量化
+18, DOM level2 CoreのElementに関するスペックを追加
+19, setAttributeNodeNSメソッドに関するスペックを追加
+20, EventTargetをミックインクラスとして再定義して、高速化
+21, YUI Compressorで圧縮する際に、ライセンス表記を消されないようにコメントを修正
+22, this._baseURLがundefinedとなるバグを修正 (beta fixed)
+
+
+2013-10-19 version 13 (Commit:　eaedac48817ebe4a8884da755103f039e6c4f73b)
+1, SVGSVGElementのコメント内で、初期値に関する誤りがあったので修正
+2, _inseted__メソッドを導入することで軽量化
+3, チケット #29279　「入れ子になったsvg要素が表示されない」を修正
+4, getCTMメソッドとgetScreenCTMメソッドの変数の整理
+5, polyline, polygon要素で、グローバル変数になっていたのをローカル変数に修正
+6, 非同期処理のために、toolとして、funcprotoを追加
+
+2013-8-29 version 12 (Commit: 83b98d1b4529171019bf30e3dff78823885ef1ed)
+1, SVGTextElement::getNumberOfCharsメソッドの高速化
+2, getNumberOfCharsメソッドのSpecの追加と、それに伴って、キャッシュに関する修正
+3, 日本語のカーニング処理は不要なので削除
+4, getNumberOfCharsメソッドにおいて、var宣言は、バグを引き起こすので削除
+5, getStartPositionOfCharメソッドの軽量化
+6, getSubStringLengthメソッドのvar宣言を整理
+7, getNumberOfCharsメソッドにおける変数の解放
+8, SVGTextContentElementインターフェースの軽量化
+9, SVGPaintの軽量化
+10, createEventメソッドを三項演算子を使って軽量化
+11, SVGExceptionインタフェースの軽量化
+12, SVGElementの軽量化
+13, SVGElementにおいて、属性の値のバグを修正
+14, setPropertyメソッドについて、変数の整理と、三項演算子に置き換えた軽量化
+15, SVGAnimationElementインターフェースに関して、変数を整理
+16, SVGPathElementの高速化
+17, チケット #31893　「Zコマンドが対応しない不具合」を修正 (beta fixed)
+
+2013-7-3 version 11 (Commit: b9f7d438381ba619d040037bd48aad8bcde0b6c8)
+1, チケット #30187　「coords-dom-01-fのバグ」を修正
+2, チケット #29987 「color-prop-01-bでのstop-colorの不具合」を修正
+3, classNameプロパティのbaseValプロパティに入れておく
+4, script要素の内容に、文字列ノードが入ってたときに起きる不具合を修正
+5, consolidateメソッドを使うと、SVGTransformの初期化をしてしまうバグを修正
+6, consolidateメソッドの修正に伴い、animate要素の処理も修正
+7, currentColorを値に設定した場合における、CSSStyleDeclarationのsetPropertyメソッドを修正
+8, SVGMarkerElementを擬似的にSVGGElementとして扱うことで、VMLの要素挿入に関する不具合を回避
+9, SVGMarkerElementのstroke-widthを算出する方法が間違っていたので修正
+10, SVGMarkerElementのlf内部関数に関する不具合を修正
+
+2013-5-29 version 10 (Commit: 67c32c6e63ea185a7b50af6b858dd6f226503f4f)
+1, getElementsByTagNameNSメソッドの軽量化
+2, SVGRadialGradientElementの軽量化
+3, SVGMetadataElementインターフェースは削除して軽量化
+4, SVGRadialGradientElementインターフェースのMath.roundを削除して修正
+5, SVGPathElementのDOMNodeInsertイベント発生時の振る舞いを高速化
+6, _tarプロパティを持つすべてのインターフェースで、処理を高速化
+7, テキスト処理の高速化
+8, innerTextプロパティの使用をやめることでるテキスト処理の高速化
+9, SVGForeignElementの実装
+10, foreignObject要素のHTML対応
+11, foreginObject要素のx, y, width, height属性をサポート
+12, SVGURIRefreneceにおいて、変数tarを開放する位置が間違えていたので修正
+13, text要素とtspan要素で空白ノードが入った場合の不具合を修正
+14, SVGTextPositioningElementインターフェースの不具合を修正 (beta fixed)
+15, script要素で正確に作動しなかった問題を修正 (beta fixed)
+
+2013-4-24 version 9　(Commit: 8865dcca9e116c1320370d63c807f8cfdcd99d94)
+1, getElementByIdメソッドとgetElementsByTagNameNSメソッドの境界条件スペックに追加の項目
+2, スペックのSVG名前空間を一つの変数にまとめておく
+3, スペックにgetElementByIdメソッドに、同値分割チェックを追加
+4, スペックにgetElementsByTagNameNSメソッドの同値分割チェックを追加
+5, ライセンスの表記ミスを修正
+6, チケット #30745「shapes-grammar-01-f.svgのシェイプの不具合」を修正
+7, SVGTransformの定数を復活
+8, スペックにimportNodeメソッドの同値分割チェックを追加
+9, SVGZoomEventのプロパティの整理
+10, SVGRadialGradientElementのプロパティ処理を整理
+11, getElementByIdメソッドの引数が文字列以外のときは例外を投げるように処理
+12, SVGAElementインターフェースの軽量化
+13, SVGAltGlyph関連のインターフェースが使われていないので削除
+14, getElementsByTagNameNSメソッドのスペックに追加して、さらに引数の型チェックをした
+15, a要素内部のテキスト処理を修正
+16, テキストノードの字詰め処理の初期化を単純な処理に変更
+17, SVGTextContentインターフェースの軽量化
+18, テキストの空白文字を一つの文字として処理できるよう改良
+19, SVGAnimateionElementのメソッドの記述を整理して軽量化
+20, getElementByIdメソッドの引数に、どのような値を入れても文字列に変化させるよう修正
+21, SVGPathElementのd属性の数値処理を高速化
+22, チケット #31195 「グラデーションの複数の配色ができない」を修正
+
+2013-1-29 version 8 (Commit: 1da31b897bfc1642f44568cda6429270778df9ca)
+1, createDocumentメソッドのバグを修正
+2, importNodeメソッドのSpecを追加
+3, チケット #30362 「use要素で循環参照が発生する」を修正
+4, setRGBColorメソッドの軽量化
+5, SVGURIReferenceの変数の整理
+6, スクリプト要素内のスクリプトをwith構文を使ってサンドボックス化
+7, SVGLoadイベントの発生とscript要素の修正
+8, NAIBU.eval関数をscript要素を活用しながらグローバル領域に対応
+9, _ca関数の実体参照の部分や_ca_関数を軽量化
+10, _ca関数のテキスト処理を改善して高速化
+11, GetSVGDocument::initメソッドを軽量化
+12, SVGElementInstanceインターフェースの記述を削除
+13, SVGPathSeg関連のインターフェースの軽量化
+14, NAIBU._setPaint関数の軽量化
+15, NAIBU._main関数の軽量化
+16, _ca関数のvisibility処理をやめて軽量化 (beta fixed)
+17, SVGURIReferenceの非同期処理を修正 (beta fixed)
+18, script要素内のdocumentに関するバグを修正 (beta fixed)
+
+2012-12-25 version 7 (Commit: 0bf63fb1fe771fe039a5d666cc70d2d7a139df4c)
+1, セミコロンの付け忘れを修正
+2, 不要なreturn thisの文を削除
+3, MouseEventのcallメソッド呼び出しは、apply呼び出しが正しかったので修正
+4, 不要なargumentsを削除
+5, Document._destroy関数を追加
+6, setRGBColorメソッドと_keywordsプロパティの軽量化
+7, getComputedStyleメソッドの改良
+8, チケット #30345 「リンクに#がついたときにSVG画像をダウンロードする」を修正  (beta fixed)
+
+2012-12-3 version 6 (Commit: ae3e2716a593c44805a41a9f46e2fedeafee1c58)
+1, getElementsByTagNameNSメソッドのSpecを編集
+2, coreモジュールのgetElementsByTagNameメソッドを実装
+3, getElementsByTagNameNSメソッドがドキュメント要素を探索に入れていないバグを修正
+4, チケット #29787「paths-data-20-f.svgでArctoコマンドに不具合」修正
+5, cssモジュールのCSSRule系インターフェースの軽量化
+6, チケット #29786「paths-data-18-f.svgでpath要素の描画に問題」を修正
+7, 不要なNAIBU._main関数の括弧を外した (beta fixed)
+8, セミコロンの付け忘れを修正 (beta fixed)
+9. チケット #30213「ハイパーリンクのリンク先のベースが実際と異なる」修正 (beta fixed)
+10, 安全のために大きすぎるSVGフォントは作動させないようにした (beta fixed)
+
+2012-10-23 version 5 (Commit: 347191024ff2779abc811b1cb27a6630fc2f4cfd)
+1, 即時関数を使って、Coreモジュールを軽量化
+2, insertBeforeメソッドの循環参照の問題を解決
+3, SVGSVGElementのメソッドの記述量を減らした
+4, Documentに関して、Specの編集
+5, getElementByIdメソッドの修正
+6, チケット #29885 「onevent属性でコード内の特定の変数がundefinedとなる」を修正 (beta fixed)
+7, チケット #29831 「animate-dom-02-f.svgでElementTimeControlのメソッドの返り値がおかしい」を修正 (beta fixed)
+
+2012-9-9 version 4 (Commit: ac92ab83b54e275f0ee73e3795990e1df85a40c2)
+1, replaceChildメソッドなど複数のSpecを追加
+2, Object._create関数を導入して、SIEを高速化
+3, getTotalLengthメソッドとgetPathSegAtLengthメソッドで、ベジェ曲線の不正確な計算があったので削除
+4, Core::NotationとCore::Entityのプロパティを整理して軽量化
+5, Core::AttrとCore::Textのプロパティを整理して高速化
+6, チケット #19263　「画像の枠からはみ出す図形があるときに文字がずれる」を修正 (beta fixed)
+7, チケット #23772　「paths-data-02-tの文字がずれるを修正」を修正 (beta fixed)
+
+2012-8-17 version 3 (Commit: 78809c21945bdf610f7c056edfc653288fd3e904)
+1, 本体のソースコードsie.jsはsie-uncompressed.jsとして、orgディレクトリに格納して、圧縮バージョンsie-mini.jsをsie.jsとして新たに作成
+2, build.phpをorgディレクトリに格納
+3, insertBeforeメソッドの修正
+4, removeChildメソッドの修正
+5, createAttributeNSメソッドの高速化
+6, DOM level 2 Coreモジュールに対するSpecの編集
+
+2012-7-14 version 2 (Commit: c7b93da02bb1a981bca3d917465794f8edf0bb04)
+1, 不要なSTLogクラスを削除
+2, createEventメソッドの変数の解放処理を追加
+3, createDocumentメソッドの例外処理におけるalertを除去
+4, マジックナンバーは軽量化のために、コメントと数字を活用
+5, 起動関数において、embed要素よりobject要素とimg要素の読み込みを優先させた
+6, importNodeメソッドの条件分岐を整理して軽量化
+
+2012-6-15 version 1.0 (Commit: 1fa8e50cebea47fe2c7466bd0f2c694d22a57d3f)
+1, アニメーション関連の要素を使ったときの安定性を向上させた
+2, SVGMarkerElementの軽量化
+3, チケット #28492 「tref要素での一文字目が表示されない」を修正
+4, 開発者用のグローバル変数のstlogを削除
+5, marker要素の２番目に適用されないバグを修正 (beta fixed)
+6, text要素内のa要素が表示されない不具合を修正 (beta fixed)
+
+2012-6-3 version 0.99 (Commit: 772e35f6636e4d13bfc1c1d77135122ea62d5f5a)
+1, multiplyメソッドの変数の整理
+2, insertBeforeメソッドで、挿入される要素の親がfirstChildプロパティとlastChildプロパティを変更しなかったバグの修正
+3, insertBeforeメソッドの軽量化
+4, cssのプロパティ名の順番を入れ替えて、軽量化
+5, hasAttributeメソッドに対して、多くの属性に対応できるよう修正
+6, setAttributeNSメソッドを修正して、id属性の値が別の要素でまたがって重なるような場合を対処
+7, marker要素の実装
+8, marker-startプロパティとmarker-endプロパティの実装
+9, marker要素のスタイルシートのバグを修正 (beta fixed)
+
+2012-4-23 version 0.98 (Commit:9c541943b455e40330e53e1fec839f6a331288e2)
+1, 軽量化のために、MutationEventsのイベント生成をまとめて処理できる_domnodeEventメソッドを追加
+2, SVGCircleElementのvar文の整理
+3, SVGEllipseElementのvar文の整理
+4, SVGColorのsetRGBColorメソッドにおいて、String::sliceメソッドを使って軽量化
+5, SVGColorの例外処理をプロパティにまとめておいて軽量化
+6, SVGTextElementのスペック実装を開始
+7, イベントモジュールで定義しなおしておいたremoveChildとinsertBeforeメソッドの不具合の修正
+8, Specとsvgモジュールを編集して、text要素内にある未知の要素に対応させた
+9, removeChildメソッドについて、firstChildプロパティとlastChildプロパティがnullにならないバグを修正
+10, insertBeforeメソッドの動作を改良
+11, チケット #28121「text要素がある条件化で表示されない」を修正
+
+2012-3-30 version 0.97 (Commit:3b55f4dd271ad649177276aed733290b6aa1e25d)
+1, NAIBU.stop関数にコメントを追加
+2, _ca関数の変数の整理
+3, object要素のスタイルシートを適用させるように修正
+4, NAIBU._main関数にコメントを追加
+5, NAIBU._main関数の変数を整理
+6, object要素だけではなくimg要素でSVGを文書に埋め込んだ場合も表示できるように修正
+7, xxListのメソッドの継承処理を、すべてSVPathSegListのコードに集めて軽量化
+8, SVGAnimateElementの_frmaeメソッドの条件分岐を属性名で切り替えるようにした
+9, animateMotion要素で終了位置が正しくないのを修正
+
+2012-3-14 version 0.96 (Commit:b497220b05aaf9c4606f16a77b1c62f4835a73e7)
+1, SVGPointのmatrixTransformメソッドの不要なコメントを削除
+2, SpecのSVGPointに関する修正
+3, matrixTransformメソッドに関する無効同値クラスのチェックをSpecに追加
+4, 3に伴い、SVGPointのmatrixtramsformメソッドを例外が投げることができるように修正
+5, SVGLineElementの軽量化
+6, SVGEllipseElementのvar文を整理
+7, tar._frame関数の解放すべき変数を追加
+8, SVGTextElementの軽量化
+9, word-spacingプロパティ (属性)の実装
+10, repeatEvent発火に関する改良
+
+2012-2-26 version 0.95 (Commit:91ced13eabc7f0498a47f5b5eaa763374726d244)
+1, SVGTextContentElementの軽量化
+2, SVGTextPositioningElementにコメントを追加
+3, チケット #27490 「letter-spacingプロパティの未実装」を修正
+4, SVGTextPositioningElementのdeterminantを変数に格納して軽量化
+5, removeChildメソッドを使ったときに、絵の表示を消して反映するように改良
+
+2012-2-14 version 0.94
+version 0.93からの変更点
+1, Active Durationの算出方法を変更
+2, set要素でendイベントが発生したときの処理方法を変更
+3, 配列を見直してgetElementsByTagNameメソッドの軽量化
+4, constructorプロパティを削除して軽量化
+
+2012-2-2 version 0.93 (revision: cb967bbb80d8a1190da1b1cd5ec9dffe61fa3967)
+version 0.92からの変更点
+1, dur属性がindefiniteの場合に対応
+2, endElementメソッドとbeginElementメソッドのリスト更新バグを修正
+3, dur属性の規定値を、indefiniteから変更
+5, NAIBU.stop関数をgetCurrentTimeメソッドを中心に修正
+6, set要素に関するバグの修正
+7,　set要素のendEventが発火しないバグを修正
+8, チケット #27038「symbol要素が未実装」の修正をして、symbol要素を実装
+9, use要素のwidth属性とheight属性の反映に関するバグを修正
+10, SVGAnimatedLengthの設定の見直し
+11, 変数endのソートはendElementAtメソッドですでに行われているので、削除
+12, Active Durationが不定だったときは、処理をしないように修正
+
+2011-1-17 version 0.92 (revision: 7e927877c7fe50dc29eb2c9f8b3d392e26516ddf)
+version 0.91からの変更点
+1, SVGAnimationElementの_getOffsetメソッドを整理して修正
+2, getStartTimeメソッドを改良
+3, _eventSyncメソッドは不要なので削除
+4, getSimpleDurationメソッドの修正
+5, repeatイベントのつづりを間違っていたので、「repeatEvent」と修正
+6, begin属性などで使われるイベント処理でバグがあったので修正
+7, repeatについて、新しく、_numRepeatプロパティをSVGAnimationElementに追加
+8, SVGAnimationElementのdur属性に対して、indifiniteの対応
+9, SVGAnimationElemetにActive Durationの計算をさせた
+10, SMIL::ElementTimeControlとSVGAnimationElementにおいて、わかりやすくするため、内部プロパティの名前を変更した。
+11, dur属性のindifiniteに対応し、初期値に設定しておく
+12, SVGAnimationElementについて、_simpleDurationプロパティを削除
+13, NAIBU.stop関数の修正
+14, tref要素の実装
+15, 負荷がかかったときに、DOMImplementationの_buffer_プロパティに問題が発生するので、対処
+16, SVGTextPositioningElementインターフェースにテキスト関連の要素の処理を集めておいた
+17, SieReader.htmlのスクリプトのリンク先をモジュールのorgに修正変更
+18, 各アニメーション要素のendEvent発火時の振る舞いを修正
+19, アニメーション途中で、beginEventが起きた場合、endEventを伴って引き起こすようにした
+20, アニメーション関連要素のActive Durationの算出方法を、getSimpleDurationメソッドだけではなくて、_finishｔと_startプロパティも活用するように変更
+21, endEvent時の_frameプロパティの削除に対して、deleteを使用
+22, SVGSetElementの_frame関数の記述が不要なので削除
+23, begin属性の規定値を0に設定
+24, beginとend属性のリストに対応
+25, SVGSetElementの_currentFrameプロパティを1進めるよう処理
+26, beginとend属性の空白処理をした
+
+2011-12-30 version 0.91
+version 0.90からの変更点
+1, SVGPointのmatrixTransformメソッドの修正に伴う改良
+2, SVGRadialGradientElementインターフェースのvar文の整理
+3, SVGElementを改良して、SVGAnimateLengthが指定されている属性の軽量化
+4, SVGElementインターフェースの_NaNRegプロパティは不要になったので削除
+5, NAIBU._noie_createFont関数のvar文の変数指定の仕方が間違っていたので修正
+6, チケット #24220 「SVGフォントの線の幅が指定された通りにならない」を修正
+7, SVGPathElementをpaserIntの代わりに、Math.roundを使って軽量化
+8, createEventメソッドを、ハッシュを使って軽量化
+9, SVGTextPositioningElementの属性に関する修正 (beta fixed)
+
+2011-12-13 version 0.90
+version 0.89からの変更点
+1, AIBU._setPaintのvisibilityプロパティなどを修正
+2, SVGTextElementのvisibilityプロパティとNAIBU._fontSearchURI関数をsplitメソッドを使うことで改良
+3, Test Suiteのstruct-frag-05-tで、a要素の前に空白文字のテキストノードがあったため、Validという文字を表示できなかったバグを修正
+4, SVGSpecにSVGPointインターフェースに関するSpecを追加
+
+2011-12-1 version 0.89
+version 0.88からの変更点
+1, SVGColorをSVG1.1 2ndに合わせて修正
+2, _currentStyleの記述を不要なので削除
+3, SVGTextElementのdiplayやvisibilityについて整理
+4, SVGTextElementのdisplay処理を改良することで、軽量化
+5, Attrについて、軽量化のため、Nodeをapplyで呼び出さないように改良
+6, SVGTextElementについて、a要素に対応できるよう修正
+7, IE6に関して注意を促すためのコメントを追加
+8, opacityプロパティ(属性)に関して、祖先要素に適用できないバグを修正
+9, setPropertyメソッドのfont-sizeに関する修正と、getComputedStyleメソッドの修正
+10, getComputedStyleメソッドにおいて、font-sizeに%などの相対単位が使われていたときの対処
+11, SVGElementインターフェースの軽量化
+12, SpecのSVGColorもSVG1.1 2ndに合わせて修正
+13, ActiveXが無効化されたときXMLHttpRequestで処理 するようにした (beta fixed)
+14, 文字列の処理をsubstringメソッドからsliceやsplitメソッドに変更した (beta fixed)
+15, パッケージからSubVersionのファイルを取り除いた (beta fixed)
+
+2011-11-9 version 0.88 (revision 3080)
+version 0.87からの変更点
+1, a要素について、HTMLファイルへのリンクは、location.hrefを使わないように処理
+2, バグ#26606「a要素の色が変化しない」を修正
+3, getComputedStyleメソッドを配列結合方式から、クロージャを活用したリスト方式に変更した
+4, getPropertyCSSValueメソッドから_defプロパティに関する記述を不要になったので削除
+5, _currentStyleプロパティを削除する処理を不要になったので除去
+6, setPropertyメソッドからcolorに関する記述を削除
+7, setColorメソッドの引数がnullであった場合も対応できるように修正
+8, SVGAnimateColorElementインターフェースのinheritを修正
+9, SVGAnimateColorElementインターフェースのbeginEventについて、処理がワンテンポ遅れていた問題を解消
+10, CSSStyleDeclarationの_setCSSTextメソッドが不要になったので削除
+11, IE6でtext, tspan要素のエラーを修正 (beta fixed)
+
+2011-10-23 version 0.87 (revision 3035)
+version 0.86からの変更点
+1, #23781 「struct-frag-02-tで画像全体の幅と高さが大きくなる」を修正
+2, SVGPaintのプロパティや変数を整理
+3, MouseEwventとMutationEventの変数を整理
+4, Eventのcallはすでに初期化できているため、削除
+5, SVGTextPostionElementの定数を数値化
+6, CSS2PropertiesやCSSStyleDeclaretionなどの値を整理
+7, SVGColorのキーワードの文字列値の空白を削除
+8, SVGSVGElementの変数を整理
+9, SVGViewSpecのプロパティを整理
+10, SVGGElementの変数を整理
+11, SVGPolygonElementなどをはじめとして、シェイプ関連の要素の変数を整理
+12, SVGPathElementの関数呼び出しを整理
+13, SVGAnimatedLengthなどの名前のエイリアスを変数で作成することで軽量化
+14, SVGPolygonElementとSVGPolylineインターフェースの共通インターフェースとして、_GenericSVGPolyElementを導入
+15, text、tspan要素で、前もって作られた_currentStylenのキャッシュを削除して修正
+16, IE9でscript要素を使ったときのエラーに対処した
+17, SVGTextContentElementやSVGTextPositionElementなどの定数を数値に変換
+18, getStartPositionOfCharメソッドの変数を整理して軽量化
+19, SVGPatternElementの変数にスペルミスがあったので修正 (beta fixed)
+
+2011-10-11 version 0.86
+version 0.85からの変更点
+1, text要素の字詰めに関する改良
+2, 変数解放のために、変数にnullを代入する方式をundefinedの代入方式に変えた
+3, #12386 「外部のSVGファイルにリンクしてもジャンプできない」を修正
+4, a要素でSVGファイルにリンクしたとき、target属性が_selfであっても置換できるように修正
+5, _ca関数で、同じ変数を二度記述するというミスを修正
+6, IE8では、なるべくXMLHTTPRequestオブジェクトを利用するように処理させた
+7, dispatchEventメソッドにかかわるバッファが増大する問題を修正して軽量化
+9, polyline, polygon要素のpoints属性をアニメーションする際に発生するバグを一部修正
+10, a要素でHTMLファイルへのリンクが作動しないバグを修正 (beta fixed)
+11, svgファイルへのリンクをクリックしたときに発生するバグを修正 (beta fixed)
+
+2011-9-19 version 0.85
+version 0.84からの変更点
+1, addEventListenerメソッドとinitEventメソッドの変数の解放処理を加えた
+2, SVGElementの変数とif文の整理をして、軽量化
+3, image要素の画像読み込みを高速化
+4, SVGTextElementの変数を整理
+5, SVGTextElementを改良して、text要素のxとy属性が一つの数値からなるリストの場合のみ、字詰め処理をブラウザに任せるようにした
+6, text要素にtext-decoration属性（プロパティ）、font-weight属性(プロパティ)などを実装
+7, 定数の設定を見直して軽量化
+8, SVGTextContentElementのプロパティのほとんどをプロトタイプで、初期設定するようにした
+9, getStartPositionOfCharメソッドの変数を軽量化のため整理
+10, マウス関連の動的なイベントでクロージャの処理ミスがあったので修正 (beta fixed)
+
+2011-9-7 version 0.84
+version 0.83からの変更点
+1, div要素のmarginプロパティ指定値に関するミスを修正
+2, SVGURIReferenceインターフェースと、関連する要素を改良して、SVGLoadイベントが2度起きるバグを修正
+3, SVGLinearGradientElementインターフェースの改良と、SVGURIReferenceインターフェースの修正
+4, svg要素のwidthとheight属性がフレーム枠よりも小さい場合は、画像の切り取りが必要になるため、0.83で外したクリップ処理を復活させた
+5, SVGURIReferenceインターフェースがわかりにくかったので、内部の処理にコメントを追加
+6, _ca関数にローカル関数_searchを導入して、軽量化
+7, チケット #25062　「g要素にイベント属性が指定されたときに動作しない」を修正
+8, removeEventListenerメソッドの作動しなかったバグを修正
+9, SVGSVGElementにコメントを追加
+10, マウスイベントの二重起動という問題があったので、それを修正
+11, EventのpreventDefaultメソッドが正常に作動しないバグを修正
+12, SVGAElementの最適化
+13, a要素とg要素のDOMの処理を一つに統一させた
+14, IE6上で発生するcreateDocumentメソッドに関するエラーを修正 (beta fixed)
+
+2011-8-22 version 0.83
+version 0.82からの変更点
+1, iframe要素で代用ができるので、画像のクリップ処理を関数_caから削除した
+2, バッファ処理で単語のミスがあったので修正
+3, 関数_caの変数を整理
+4, CSSPrimitiveValueインターフェースのsetFloatvalueメソッドを実装して、それを使用しながら軽量化
+5, getAttributeメソッドにミスがあったので修正
+6, 全体画像の位置を微調整 (beta fixed)
+
+2011-8-10 version 0.82
+version 0.81からの変更点
+1, NAIBU._mainの軽量化
+2, NAIBU._mainにおいて、radialGradient要素に関する必要のない処理を省いた
+3, iframe要素の属性処理を変えることにより、フレームの枠をよりブラウザの仕様に近づけた
+4, NAIBU._main関数の初期化の段階で、画像のフレームを作るように軽量化した
+5, _ca関数の変数解放にミスがあったので修正
+6, 画像フレームの幅と高さをonloadの段階で決定させるようにした
+7, textとtspan要素のdisplay、visibility、cursorプロパティに関連したバグを修正
+8, SVGFontの文字の大きさがおかしくなるバグ(IE8のみで発生)を修正
+9, SVGFontElementの変数などを整理
+10, チケット #25820「特定のアルファベットの下がかすれる」を修正
+11, インラインSVGに関する_ca関数のバグを修正 (beta fixed)
+12, テキストの位置が上に行き過ぎていたので微調整をした (beta fixed)
+13, text、tspan要素でvisibilityとdisplayプロパティが正常に動かなくなるバグを修正 (beta fixed)
+14, 全体画像の位置が下や左へずれていたので、div要素のmarginプロパティを使って調整した (beta fixed)
+
+2011-7-6 version 0.81
+version 0.80からの変更点
+1, ifrmae要素を使って、描画をフレーム内で処理
+2, GetSVGDocumentの修正
+3, フレーム経由に変更したので、a要素のtarget属性に関する修正をした
+4, SVGPathElementのprototypeプロパティを整理
+5, SVGRectElementのvar文を整理
+6, getFloatValueメソッドの処理を一部、高速化
+
+2011-6-26 version 0.80
+version 0.79からの変更点
+1, SVGElementの整理
+2, グローバルオブジェクトのdocumentをローカルにしておいて軽量化
+3, GetSVGDocumentの変数documentを整理して軽量化
+4, SVGAnimteColorElementにおけるvar文の整理
+5, SVGAnimateMotionElementにおいて、現在の時間配分に関する問題について修正
+6, SVGAnimateMotionElementの距離に関する修正
+7, SVGAnimateMotionElementのbeginEventの際、transformのanimValが不正なのを修正
+8, IEで作動しないので、deleteの式を,（コンマ）で区切るのをやめて、別々に分けておいた
+9, SVGAnimateMotionElementのpath属性に関するエラーを修正
+10, SVGAnimateMotionElementでtransform属性がきかなくなる問題を一部修正
+11, SVGAnimateMotionElementの変数stの位置がおかしかったので修正
+12, animateMotion要素のvalues属性を実装
+13, animateMotion要素のfill属性を実装
+
+2011-6-9 version 0.79
+version 0.78からの変更点
+1, 不要な改行を削除
+2, to属性とby属性がanimate要素で指定されたときに発生するバグを修正
+3, SVGAnimateElementのvar文を整理
+4, SVGSetElementのvar文を整理
+5, SVGSetElementのスタイルシート変更に関してバグがあったので修正
+6, SVGAnimationElementの_eventSyncメソッドを修正して、beginとendイベントに対応させた
+7, SVGAnimateMotionElementにコメントを追加
+8, Readme.htmlにおいて、連絡先であるブログのタイトルを変更
+
+2011-6-2 version 0.78
+version 0.77からの変更点
+1, _ca_関数で、lengthプロパティをやめることで最適化
+2, dispatchEventメソッドの最適化
+3, for文を見直して、importNodeメソッドの最適化
+4, getFloatValueメソッドの高速化
+5, SVGTransformのメソッドに対して軽量化
+6, SVGPathSegCurvetoCubicAbsなどのプロパティに対して軽量化
+7, NAIBU._setPaint関数において、CSSのデフォルト値かどうかをチェックする方法を、擬似的な匿名プロパティの方式に切り替えた
+8, CSS2Propertiesのdisplayの初期値に誤りがあったので修正
+9, SVGPathElementのif文の順序を変えることで最適化
+10, SVGAnimationElementのメソッドの条件分岐を修正
+11, dispatchEventメソッドの例外処理について、記述を簡素化
+12, dispatchEventメソッドの軽量化
+13, SVGAnimateElementのコメントをわかりやすいように編集
+14, SVGAnimateElementの修正
+15, SVGAnimateColorElementのvar文を整理
+16, SVGAnimateColorElementの修正
+17, setPropertyメソッドについて、再入力の際も、色が変化できるように修正
+18, SVGAnimateColorを修正して、animateColor要素でinheritやcurrentColorを値として指定したときもサポート
+19, _nodeInsertInto関数に関して、push方式やlength方式から、0.76以前の方式に戻した
+20, _nodeInsertIntoの最適化
+21, チケット #25336　「cursorプロパティの動作不良」を修正 (beta fixed)
+
+2011-5-22 version 0.77
+version 0.76からの変更点
+1, createCSSStyleSheetメソッドを修正して、引数のmediaがundefinedのときも対応
+2, SVGDocumentに対して、DocumentStyleを継承させた
+3, SVGStyleElementにLinkStyleを継承させた
+4, CSSStyleRuleの修正
+5, CSSパーサを使ってSVGStyleElementのStyleSheetオブジェクトを実装
+6, SVGPathElementにおいて、配列の挿入を、lengthプロパティ方式からpush関数方式に切り替えて軽量化
+7, addEventListenerメソッドの最適化
+8, getComputedStyleメソッドに対して、スタイルシートのルール処理を追加した
+9, チケット #23989「style要素とCSSセレクタのサポート」
+10, スタイルシートの実装
+
+2011-4-29 version 0.76
+version 0.75からの変更点
+1, createTextNodeメソッドの演算子を減らして、軽量化
+2, importNodeメソッドにおいて、ループ内の属性ノード作成は展開しておいた
+3, importNodeメソッドの条件分岐の順序を変更
+4, SVGElementのif文を修正
+5, CSSPrimitiveValue.prototypeの設定について整理
+6, RGBColorインターフェースのプロパティに関して、デフォルト値を修正
+7, SVGColorのsetRGBColorメソッドの整理
+8, SVGColorのprototypeを整理
+9, 付け忘れていたセミコロンを追加
+10, cloneNodeメソッドにおいて、in演算子の代わりに、hasOwnPropertyメソッドを使用した
+11, SVGColorのsetRGBColorメソッドにおいて、例外処理をサポート
+12, SVGStyleElementの整理
+13, チケット #25063「currentColorを使用したときに不具合」を修正 (beta fixed)
+14, stop-colorでcurrentColorを対応 (beta fixed)
+
+2011-4-23 version 0.75
+version 0.74からの変更点
+1, SVGElementの整理
+2, 変数を解放させるNAIBU.freeArg関数の追加
+3, IE9の判断条件に対する修正
+4, CSS2Propertiesの初期化に対して、変数を整理
+5, getPointAtLengthメソッドの変数に対する整理
+6, Event.BUBBLING_PHASEの定数はすべて数値に変更
+7, createSVGAngleメソッドがなかったため、追加
+8, SVGAngleのデフォルトのプロパティを修正して、newValueSpecifiedUnitsメソッドも修正
+9, SVGAngleのvalueAsStringプロパティのつづりにミスがあったので修正
+10, SVGGradientElementのvar文の整理
+11, SVGGradientElementについて、必要のないif文を削除
+12, stop-colorプロパティに対して、未対応だった色のキーワード値を対応させた
+13, SVGGradientElementにおいて、VML要素の設定を、setAttributeメソッドから、プロパティ設定に変更
+14, SVGAnimateElementのvar文を整理
+15, SVGColorのプロパティを整理して、軽量化
+16, CSSPrimitiveValueのsetStringValueメソッドとgetStringValueメソッドを修正
+17, setPropertyメソッドの軽量化
+18, stop-colorプロパティにおいて、SVGColorの型キャストができるように、setPropertyメソッドを修正
+
+2011-4-11 version 0.74
+version 0.73からの変更点
+1, setPropertyメソッドにおいて、opacity属性の値に対して、parseFloatを使うのをやめて、記号に切り替えた
+2, setPropertyメソッドを整理して、軽量化した
+3, SVGAngleのconvertToSpecifiedメソッドを修正
+4, getFloatValueメソッドについて、軽量化
+5, GetSVGDocumentのメソッドを整理して軽量化
+6, GetSVGDocumentのAjax部分について、クロージャの使用をやめることで軽量化した
+7, SVGPathElementのクロージャーをやめて、最適化
+8, NAIBU._setPaint関数において、numの解放にエラーがあったので修正
+9, SVGPathElementの条件分岐やループを見直して、軽量化
+10, CSS2Propertiesの初期化について、変数を整理した
+11, getPropertyCSSValueメソッドに対して最適化
+
+2011-4-1 version 0.73
+version 0.72からの変更点
+1, var文に対して、構文を整理した
+2, GetSVGDocumentの_initメソッドに関して、クロージャの修正をした
+3, createAtrributeNSメソッドについて整理と、Attrのnodevalueプロパティを修正
+4, addEventListenerメソッドを修正して、マウスイベントに対処できるようにした
+5, チケット #24648 「単位「%」の解釈が異常」を修正
+6, SVGURIReferenceのvar文において、showの値が設定されていなかったので修正
+7, 英語版であるREADME_EN.txtを同梱
+
+2011-3-20 version 0.72
+version 0.71からの変更点
+1, SVGElementのプロパティを整理
+2, SVGxxxListにすべて、Array型を継承させた
+3, 軽量化のために、_listプロパティの削除と、SVGPathElementとNAIBU._setPaintのグローバルオブジェクトをローカルに変えておいた
+4, _ca関数の整理
+5, SVGLengthに_fontSizeプロパティを追加
+6, CSSPrimitiveValueのgetFloatValueについて修正
+7, SVGLengthのnewValueInSpecifiedメソッドに関して、パーセントとemの単位の処理を修正
+8, チケット #24492「単位の解釈が異常」を修正
+9, SVGLengthのconvertToSpecifiedUnitsメソッドを修正
+10, バッファリング処理において、shiftの使用をやめて、カウントをするように変更
+11, SVGSVGElementコンストラクタ関数にミスがあったので修正
+12, 各々の要素オブジェクトで、DOMNodeInsertedイベントが発火されたときの処理にバグがあったので、それを修正
+13, Specにおいて、SVGLengthの境界条件テストについて修正
+14, Specにおいて、convertToSpecifiedUnitsメソッドの同値分割テストに、新たなテストを追加
+15, setRotateメソッドの同値分割テストに関する修正
+
+2011-3-4 version 0.71
+version 0.70からの変更点
+1, NAIBU._setPaint関数のparseFloatを記号に変えることで最適化
+2, getOverrideStyleメソッドの修正
+3, animate要素のby属性に関して、「animate-elem-13-t」のテストにパスできるよう、修正
+4, baseValのunitTypeをanimValのunitTypeに設定させるように変更
+5, チケット #24262「TestSuiteのanimate-elem-30-tで例外処理が発生」を修正
+6, チケット #23828「animate要素のfill属性を設定しても、動きが止まらない」を修正
+7, animate要素のcalcMode属性において、discreteモードで起きるバグを修正
+8, createSVGLengthメソッドの修正にあわせて、getComputedTextLengthメソッドを修正
+9, IE9で定数扱いとなったdocumentにおいて、ローカル変数の再定義をやめた (beta fixed)
+
+2011-2-19 version 0.70
+version 0.69からの変更点
+1, NAIBU.Time.start関数は、バッファ処理の後で実行するように改良した
+2, handleEventメソッドをあまり呼び出さないようにして、dispcatchEventメソッドを軽量化
+3, SVGPathElementにおいて、parseFloatの使用をやめてビット演算に変えることで軽量化
+4, SVGLineElementのループを展開させた
+5, SVG1.1の解釈に誤解があったため、SVGTransformを修正
+6, xxxListに共通するnumberOfItemsプロパティを整理
+7, チケット #24233「text要素の中のa要素のテキストの一文字目が表示されない」を修正
+8, SVGTransformの修正にあわせて、consolidateメソッドも修正
+9, Eventオブジェクトの生成において、createEventメソッドを修正し、Dateオブジェクトの生成を抑制して、軽量化 (Dateオブジェクトは生成するようにした:beta fixed)
+10, バッファを処理している間も、描画の速度がおかしくならないように修正
+11, SVGPathElementのパスパーサに記号の誤りがあったので修正 (beta fixed)
+12, バッファリングが空の場合は、処理を実行させないように修正 (beta fixed)
+13, Spec (tool/module_test)を同梱
+
+2011-2-2 version 0.69
+version 0.68からの変更点
+1, inverseメソッドのマイナス符号の付け忘れを修正
+2, アニメーションの描画速度の調整にバグがあったので修正
+3, animateColor要素でアニメ終了時にプログラムが止まるバグに関する修正について見直し
+4, animate要素とanimateColor要素に関して、keyTimes属性を指定されていないときのバグ等を修正
+5, dispatchEventメソッドの最適化
+6, SVGMatrixのrotateFromVectorメソッドがラジアンを間違えていたため修正
+7, SVGPathElementの軽量化
+8, dispatchEventメソッドにバッファリング処理を施して、軽量化
+
+2011-1-21 version 0.68
+ver. 0.67からの変更点
+1, createSVGLengthメソッドにおいて、unitTypeプロパティ設定に仕様と矛盾するミスがあったので、修正
+2, SVGLengthのプロパティを整理して軽量化
+3, SVGLengthのnewValueSpecifiedUnitsメソッドを修正
+4, NAIBU._setPaint関数における変数の解放
+5, 1, NAIBU.Time関数において、updateIntervalの処理のバグに対して、修正をした
+6, SVGURIReferenceの外部XML処理に追加
+7, SVGURIReferenceにおけるAjaxを非同期通信から同期通信に変更
+8, チケット #24013「font-face-uri要素を使った際、SVG Fontが表示されない」が修正
+9, SVGLengthに関する例外処理のバグの修正
+10, SVGMatrixに関する引数に対して、演算可能かどうかをチェックする処理を修正
+11, SVGPathElementの処理に関して、配列の組み合わせを見直した
+12, DOMAttrModifiedイベントの発火処理を改良して、initMutationEventメソッドの使われる回数を減らして、軽量化
+13, アニメーションに関して、keyTimes属性のバグなどを修正（beta bug fixed)
+
+2011-1-15 version 0.67
+ver. 0.66からの変更点
+1, Test Suite:text-intro-04-tで起きるバグ「glyph要素がfont要素内にないときの対処ができない」を修正
+2, 関数NAIBU._noie_createFontを修正
+3, コメントで書き残した不要なコードを消しておいた
+4, handleEventメソッド内部では、例外が起きれば、途中で止まらず先に進むようにした
+5, initEventメソッドを修正
+6, ハイパーリンク内のテキストを勝手に表示しないように、SVGAElementを修正
+7, チケット #23598「text要素の中のa要素が表示されない」バグを修正
+8, MSXMLに対して、空白文字に対しても、ノードを保持するように設定を変えた
+9, NAIBU._noie_createFontを修正して、テキストを消す方法を、displayプロパティからvisibilityプロパティに変えた
+10, getComputedStyleメソッドの変数を整理して、最適化
+11, getComputedStyleメソッドにおいて、デフォルト値の検索をリストから外して、ハッシュ検索に変更したことで最適化
+12, _ca関数の変数に対して解放処理をした
+13, SVGLengthに関して、プロパティ名の修正や変数の整理をした(beta fixed)
+
+2010-12-30 version 0.66
+ver. 0.65からの変更点
+1, SVGTextContentElementにおいて、文字列の分割にsplitを用いた
+2, 関数NAIBU._fontSearchURIとNAIBU._fontを追加
+3, シェイプ関連要素に限り、キャッシュを消すようにして、メモリを節約
+4, 転送量を減らすため、エラーコードの日本語部分を英語に統一させた
+5, unloadイベント時のdetachEventが「dettachEvent」と誤っていたので修正
+6, SVGURIReferenceのバグを修正して、embedに対し、ちゃんとデータを取得できるようにした
+7, SVGURIReferenceの#idに関する修正
+8,　SVGStringListの最適化
+9, SVG Fontの実装
+10, g要素の属性変更に際して、画像の変遷ができるように修正
+11, SVG Fontに対して、text要素に子要素があった場合の対処を追加
+12, SVGURIReferenceで正規表現に関するバグを修正
+
+2010-12-18 version 0.65
+ver. 0.64からの変更点
+1, チケット #21136 「画像の幅と高さが特定の条件を満たしたときに、画像が途切れる」を修正
+2, SVGMatrixの最適化
+3,　GetSVGDocumentの変数の整理
+4, SVGPointのプロパティの整理
+5,　SVGPathElementの変数に対して、nullを使って、解放させた
+6,　getComputedStyleメソッドの最適化のために、CSS2Propetiesオブジェクトを編集した
+7, getComputedStyleメソッドについて、キャッシュの方式を変えることで、さらなる高速化と最適化
+8, EventのpreventDefalutメソッドを実装
+
+2010-12-2 version 0.64
+ver. 0.63からの変更点
+1, animate要素が期限前に終了してしまうバグを修正
+2, screen.updateIntervalで処理を高速化
+3, NAIBU._setPaintの修正
+4, getOverrideStyleメソッドの修正
+5, eventに関して、dettachEventを使いながら、メモリリーク対策をとった
+6, calcMode属性のdiscreteに対応
+7, gzipで圧縮したJSファイルを同梱
+
+2010-11-19 version 0.63
+ver. 0.62からの変更点
+1, onreadystatechangeプロパティに関して、軽量化のためにメモリリーク対策を取った
+2, チケット #23579「ある特定のフォントを使用したtext要素で文字のずれが起きる」を修正。
+3, SVGAnimateElementの_valuesプロパティと_valueListプロパティとの変換に関する処理を追加
+4, cloneNodeメソッドをimportNodeメソッドを使って修正
+5, animate要素の部分的な実装
+6, チケット #23599「Test Suiteのpath-data-x-tに関する表示の問題について」を修正
+7, フレームの進行にバグがあったので修正
+8, SVGRadialGradientElementの修正
+9, SVGElementのgetBBoxメソッドにxとyが逆になる不具合があったので修正
+
+2010-11-3 version 0.62
+ver. 061からの変更点
+1, チケット #23501 「Text2SVG機能が他のブラウザで働かない」を修正
+2, いくつかのプロパティをprototypeに移して、最適化
+3, createTextNodeメソッドの引数を自動で文字列型に変換するよう修正
+4, setIntervalに対してclearIntervalをunload時に使用するように改良
+5, getOverrideStyleメソッドの修正
+6, ハッシュ検索を使って、SVGPathElementの高速化
+7, Event生成の最適化
+8, _getOffsetメソッドの修正
+9, DOMExceptionのエラー文の表示がおかしかったので、それを修正
+10, インラインSVGのためのsvginhtml.jsに対する修正をした
+11, unload時に、windowをnullにしないように改良
+12, sie-php0.3をsie-php0.4に更新
+
+2010-10-22 version 0.61
+ver. 0.60からの変更点
+1, Document Object Model(DOM) level2のインターフェースをサポート
+2, text要素のx(y)属性やdx(dy)属性の複数の座標指定を実装
+3, SVG Fontのサポートを取り外した（注:いずれ、再実装予定）
+4, XML名前空間をサポート
+5, tool一覧を取り外した （注:次回のリリースまでには再同梱）
+
+2010-6-8 version 0.60
+ver. 0.58からの変更点
+1, NAIBU.FontStyleオブジェクトのestStyleメソッドを最適化
+2, カーニング対象に「-」の文字を付け加えた
+3, fill-opacityに関するバグの修正
+4, NAIBU.XLinkオブジェクトのxml:base属性に関する修正
+
+2010-1-26 version 0.58
+ver. 0.57からの変更点
+1, SVG FontにおけるSafariの安定化
+2, STObjectオブジェクトを再利用
+3, STPathオブジェクトの高速化
+4, colorメソッドの修正
+5, NAIBU.FontStyleオブジェクトや、NAIBU.PaintColorオブジェクトのコードの整理
+6, try構文を削除するなど見直して高速化
+7, チケット #20295 「SVGFontを使ったとき、text要素の属性が反映されない」を修正
+8, 関数NAIBU.transformToCTMの整理
+9, 関数_noie_svgfontの代わりに、機能をobjectembedsのreadSvgFontメソッドに集約させる
+10, 変数documentをページが閉じたときに解放させるようにした
+11, SVG Fontにおいて、IEの例外処理に対する対処を追加
+12, 変数のブール値変換を行うようにした
+13, path要素のd属性のパーサをJSON方式から正規表現方式に切り替えて、高速化した
+
+2010-1-9 version 0.57
+ver. 0.56からの変更点
+1, chsetの最適化
+2, STPathオブジェクトの最適化
+3, fontsetのAliasを増やした
+4, SVGtoVMLオブジェクトのreadメソッドを高速化
+5, ルート要素にvisibilityプロパティを適用させるのをやめる
+6, windowオブジェクトのイベント解放の位置を修正
+7, Safari3.xでもSVGアニメーションができるように改良
+8, チケット#16943 「use要素が一部のモードで非対応」を修正
+9, NAIBU.PaintColorオブジェクトを整理して高速化
+10, Opera10.xのSVG画像をなかなか読み込まない現象を解決するため、SVGフォント処理をずらした
+
+2009-12-28 version 0.56
+ver. 0.55からの変更点
+1, タイムライン開始時の処理を一つの関数にまとめて、軽量化
+2, 軽量化のために、getOffsetメソッドを導入した
+3, eventSyncメソッドを使って軽量化をした
+4, 複数のset要素に対応
+5, 変数のAliasを作成
+6, FontStyleのfsetメソッドに関数のAliasを作って高速化させた
+7, チケット #19837「OperaでSVG Fontを使うと、見えなくなってしまう」を修正
+8, 関数NAIBU.pathDataを削除した
+9, set要素において、イベントアニメーションを何度も行えるように改良した
+10, フレームごとに実行する関数に関して、beginが呼び出されたときのみ実行されるようにした
+
+2009-12-15 version 0.55
+ver. 0.54からの変更点
+1, orientation属性を実装
+2, STSetElementオブジェクトの実装
+3, フレーム処理で同期を行えるように処理
+4, NAIBU._fontSearchURIの位置を修正
+
+2009-11-24 version 0.54
+ver. 0.53からの変更点
+1, 見やすくなるよう、コーディングの整形をした
+2, unicode属性が指定されていないときの無視する処理を追加
+3, SVGFontの縦書きへの対応
+4, バグ #13949「属性の相対単位の解釈が異常」を修正
+5, SVGFontについて、同列の中の同じ文字が表示されなくなるバグを修正
+6, 縦書きのときの句読点を、自動で位置合わせするように改良した
+
+2009-11-13 version 0.53
+ver. 0.52からの変更点
+1, 関数の最後にセミコロンを付けるようにした
+2, STArcオブジェクトのコードの整理
+3, font-face-uri要素とfont-face要素の実装
+
+2009-10-26 version 0.52
+ver. 0.51からの変更点
+1, インラインSVGにおけるWebkitの文字化けを修正
+2, http://d.hatena.ne.jp/bellbind/20090404/1238821485 左のコード(bellbind氏）を使用して、リンクのツールチップに対応させた
+3, line-heightプロパティを指定して、文字のずれを修正
+4, FirefoxとOperaにはdataスキーム方式ではなくて、DOMParser方式のtext2svg機能を採用した
+
+2009-10-16 version 0.51
+ver. 0.50からの変更点
+1, SVG in HTML機能の実装
+2, 関数を無名関数にした
+3, text-indentプロパティの設定を「0px」にした
+4, use要素で使うクローン処理を、innerHTML処理に変更
+
+2009-6-11 version 0.50  ver. 0.48からの変更点
+1,a要素内のテキストの位置がずれるバグを修正
+2,Sie Readerを同梱
+
+2009-5-29 version 0.48  ver. 0.46からの変更点
+
+1,addRuleメソッドの代わりに、cssTextプロパティに切り替えた
+2,STdocumentを配列から通常のオブジェクトに
+3,関数getURLと変数STdocumentの整理
+4,画像読み込みが終わるたびに、NAIBU.PaintColorのキャッシュを初期化するようにした
+5,関数caにおける変数dnの削除
+6,STObject.nextの呼び出しのタイミングを変えた
+7,NAIBU.PaintColorオブジェクトのrootElementプロパティを削除
+8,childrenメンバにおける解放について、deleteからnullに方法変更
+9,unsvgtovmlの整理
+10,STPolygonとSTPolylineオブジェクト、STRectオブジェクトの整理
+12,チケット#15015「文字が縦にずれている」を修正
+
+2009-5-8 version 0.46  ver. 0.45からの変更点
+
+1,チケット #14283「tspan要素の位置がおかしい」修正
+2,gradientTransform属性に対応
+3,STTextの最適化
+4,変数tbthの削除をして、NAIBU.XLinkの整理をした
+5,STUseElementのpaintとxlinkメンバの解放
+6,rect要素限定で、filter方式のradialGradientを適用
+7,NAIBU.PaintColorのgradientメソッドの整理
+8,STGroupElementのchildrenメンバの解放
+9,IE8のバグ対策として、セレクタ処理を切り分けた
+10,IE8のため、CSS設定の際にはpxという単位を付けるようにした
+11,スタイルシートのプロパティleftとtopのデフォルト値がIE8ではautoなので、それの対策
+12,STViewSpecオブジェクトのsetメソッドにおいて、変数ttpsの値がなかったのを修正
+13,IE8のため、setAttributeを使って、属性書き換えをした部分を、プロパティ書き換えに変更
+
+2009-3-18 version 0.45  ver. 0.43からの変更点
+
+1,チケット #13717　「radialGradientを適用したrect要素の表示がおかしい」修正
+2,NAIBU.transformToCTMの最適化
+
+2009-2-28 version 0.43  ver. 0.42からの変更点
+
+1,チケット #13949 「属性の相対単位の解釈が異常」修正
+2,チケット #15037 （Firefoxにおいて）「embed要素を使うと画像が表示されない」 修正
+3,this.childrenの項目にnullやundefinedを入れないように設定
+4,text要素のrect修正を最適化
+5,STLengthの最適化
+6,chsetの正規表現マッチを文字列の検索判定に変更
+
+2009-2-17 version 0.42  ver. 0.41からの変更点
+
+1,バグ#14283の修正
+2,text-anchorの処理を修正
+3,カーニング調整を修正
+4,STArcのnew Array()を[]に簡略化
+5,a要素のずらし修正に関して、記述量を減らした
+6,NAIBU.transformToCTMの最適化
+7,text要素のスタイルがtspan要素に引き継がれないバグを修正
+8,コード2831が発生する不具合を修正
+
+2009-1-30 version 0.41  ver. 0.40からの変更点
+
+1, PaintColorオブジェクトのカスケード処理を変更
+2, バグ#14615の修正
+3,  _s_chsetの最適化
+4, STImageのPaintColorオブジェクト作成の引数不具合を修正
+5, _s_chsetの高速化
+6, fsetの誤った引数を渡す間違いを修正（コード282の修正）
+7, use要素が表示されないバグを修正
+8, バグ#14615一部修正
+9, SVGtoVMLのgetObjectのバグを修正
+
+2009-1-19 version 0.40  ver. 0.39からの変更点
+
+1,text-anchorプロパティのサポート
+2,NAIBU.PaintColorなどの最適化
+3,変数のnullで解放する量を増やした
+4,テキストの長さを算出するtextLengthをサポート
+5,xlink:href属性が指定されなかったときに、例外処理が投げかけないように修正
+6,font-sizeのデフォルト値を"12"(多くのブラウザで12に近い値が採用されているため）に統一
+7,tspan要素におけるdx、dy 属性が指定されたときのバグを修正
+
+2009-1-07 version 0.39  ver. 0.38からの変更点
+1,バグ[#14168]の修正
+2,tspan要素の位置が誤るのを修正
+3,PaintColorオブジェクトのsetの引数変更
+4,xml:base属性はより近い親要素のを適用
+5,STGroupElementを枝にした木構造に変更
+6,チケット#14169修正
+7,ソースがわかりやすいようにコメントを増やした
+8,undefinedのチェックをvoid 0で行う
+9,正規表現関連のオブジェクトの整理
+10,STLengthの最適化
+
+
+2008-12-04 version 0.38   ver. 0.37からの変更点
+1,tspan要素にFontStyleを適用
+2,STGroupオブジェクトの実装
+3,バグ[#13947] gnuplotから出力されたSVGが表示されない　を修正
+4,バグ[#13703]のクリッピング異常を再修正
+5,bug[#13963]viewBox属性などを指定すると、text要素の位置がずれてしまう を修正
+6,Objectembedsオブジェクトを全ブラウザで作成するように
+7,== 演算子を === に
+8,i++を++iに
+9,XLinkにおいて、ファイル名のみを記したURIのバグを修正
+
+2008-11-11 ver.0.37   ver. 0.36.1からの変更点
+1, バグ[#13703]「クリッピングの動作がおかしい」修正
+2, バグ[#13718]「linearGradient要素の属性が指定されていないときの問題」修正
+3, "2cm"など、単位のついた属性に対応
+4, STLengthを仕様に近づけた
+5, TransformListとTransformオブジェクトを簡素化し7て、transformToCTMに統一
+6, ページを移動する際、変数を開放する処理を追加
+7, STLogのオブジェクト生成場所を変更（バグ[#13935] defer属性を使わないとSVGが表示されない）
+8, 必要のないコードを削除
+9, 「new Array()」の部分を「　[]　」に統一
+10, PaintColor.defaultsを「for( in )」でチェックする際、プロトタイプチェーンでたどった変数をチェックしないよう、hasOwnPropertyを使う
+11, STPathオブジェクトの高速化
+12, setVMLNameSpaceに返させないようにした
+
+2008-10-30 ver.0.36.1 0.34からの変更点
+1, CTMの処理方法を変更
+2, PaintColorオブジェクトの改良
+3, a要素の継承のバグを修正
+4, グラデーション参照要素がないときの対応
+5, path要素の高速化
+6, font関連の属性を処理するFontStyleオブジェクトの実装
+7, パッチ#13682の適用
+8, コメントの一部誤りを訂正
+9, 画像を読み込んでから、次の画像を読み込む処理に変更
+10, バグ#13703の一部修正
+
+2008-10-13 ver.0.34 0.32からの変更点
+1，グラデーション処理の改良[パッチ#13571] 
+2，width → svgwidth の変換の改良[パッチ#13587]
+3，slice指定でも、はみ出した領域が表示されるバグを修正[バグ#13388]
+
+2008-09-27 ver.0.32 0.31からの変更点
+1, スライスされた画像に対処（バグ #13388)
+2, スタイルシートに関する最適化（パッチ #13517)
+3, TransformListの最適化
+4, リンクされた文章の下線をデフォルトでは消すようにした
+5, PaintColorオブジェクトの最適化（パッチ #13468）
+6, a要素内のテキストのずれを修正（バグ #13529）
+7, 色のキーワード名を修正（パッチ #13537）
+8, 属性やプロパティにおいて、値「inherit」に対応
+9, cursorプロパティを実装
+
+2008-09-15 ver.0.31 0.30からの変更点
+1, Sieb が Safari で動かない不具合の修正（パッチ ##13407)
+2, 属性なしの<svg>タグに対応させた
+3, rgb 形式の色指定を % 表記に対応させた（パッチ #13426)
+4, stroke に opacity が適用されないバグを修正（バグ #13425）
+5, PaintColorオブジェクトの最適化（パッチ #13468）
+6, opacity関連のバグを修正
+7, STPathの不要な部分を除去（パッチ #13470）
+
+2008-08-28 ver.0.30 0.29からの変更点
+1, データ読み込みの最適化
+2, Matrixオブジェクトに行列式を求めるdeterminantメソッド追加（パッチ #13385）
+3, g 要素の fill-opacity が無視されるバグを修正（バグ #13384)
+4, <script>タグの除去をやめる
+5, コード変換部分における正規表現の修正（パッチ #13394）
+
+2008-08-16 ver.0.29 0.27からの変更点
+1, PaintColorオブジェクトのプロパティを、実際に取得する名前と一致させた
+2, <![CDATA[.. ]]>をコメントとして処理させた
+3, defs要素を表示させないようにした
+4, PaintColorにsetStyleメソッドを追加させた
+5, use要素をサポート
+
+2008-07-20 ver.0.27 0.26からの変更点
+1, sie.phpをバージョン0.2から0.3に変更してリリース
+詳細は以下を参照
+http://www.revulo.com/SVG/SIE.html
+
+2008-07-07 ver.0.26 0.25からの変更点
+1,gradientRadial要素の表示を自然に近づけるよう修正（#12580）
+2,PaintColorオブジェクトのコードの整形
+3,opacity属性の優勢順序を変えるなどして修正
+4,stop-opaicty属性の適用
+5, lt; という文字列を含む SVG ファイルが表示できるようにした（#12884）
+
+2008-06-10 ver.0.25  0.24からの変更点
+1,コードを整理して最適化（パッチ#12656）
+2,line 要素や rect 要素で、デォルト値をゼロに設定（パッチ#12656）
+3,rect 要素の処理で、係数を 0.5228 → 0.55228 に修正（パッチ#12656）
+4,path要素のd属性が空のとき例外処理をさせないようにした
+5,0.24でバグ#12386に対して修正された部分を元に戻した
+
+備考
+1では、そのほかに、不要な変数やdelete演算子を使った部分を削除しています。
+
+2008-05-29 ver.0.24  0.23からの変更点
+1,path要素の T,tコマンドを表示させるようにした(バグ#12548)
+2,path要素の Q,qコマンドの表示の異常を修正(バグ#12579)
+3,path要素の mコマンドに対応
+4,リンク先の SVG画像を下に表示させた（バグ#12386）
+5,使われていない変数を削除するなどして、軽量化を図った
+
+2008-05-18 ver.0.23  0.22からの変更点
+1,バグ#12386の一部修正。自サイト内のSVGファイルにジャンプするとき、SVGファイルを表示させるようにした。
+2,sie.php0.2を同梱。それに伴って、toolディレクトリを新たに作成
+
+2008-05-11 ver.0.22  0.21からの変更点
+1,g要素内で、text要素以外のテキスト内容が表示されてしまうバグを修正
+2,フォントの大きさの計算方法を、stroke-widthと同じにした
+3,不要なminx、minyという変数を削除
+4,文字のデフォルトがIE（中サイズ）では12ptだったのを、12pxに統一（バグ#12471)
+5,stroke-dasharray属性のバグを一部修正
+6,Ajax部分において、X-Requested-Withヘッダを出力させた
+
+2008-05-03 ver.0.21  0.20からの変更点
+1,「sie0.20mini.js」でプログラムが実行できないという不具合を修正
+
+2008-05-02 ver.0.20  0.13からの変更点
+1,opacity属性のバグを修正(パッチ#12315)
+2,points属性とfill、stroke属性の変換をやめる
+3,<g>という、属性の付いていないタグに対応
+4,text要素のずれを修正（バグ#11696）
+5,stroke-width属性の改良（パッチ#12358）
+6,mコマンド以降の複数の座標をlコマンドとして対応させた
+7,HTMLでobject要素の幅が%の場合クライアント領域の幅を用いることにした
+8,円弧の最適化（パッチ#12129）
+9,viewBox, preserveAspectRatio の処理の修正（パッチ#12415）
+10,xml:base属性のバグを修正
+11,transform 属性 (translate, rotate) の修正（パッチ#12423）
+10,image要素のサポート
+11,色のキーワードを120色以上に増やした
+
+2008-4-5 SIE ver.0.13の公開。バージョン0.12から変更点
+1,path 要素の ArcTo に複数の相対座標を対応させた
+2,style="stroke-width: 10;" のような形式の指定に対応(パッチ#12155)
+3,stroke-opacity の指定が効かなかったのを修正(パッチ#12155)
+4,opacity の端数切り上げの処理を除去(パッチ#12155)
+5,font-size 属性に対応させた
+6,transform 属性のバグを修正(パッチ#12207)
+7,polygon、 polyline 要素の points 属性のパースを改良(パッチ#12207)
+8,属性の付いていないg要素に対応した
+
+2008.3.19 SIE ver.0.12の公開。バージョン0.11からの変更点
+1,付属のサンプルを4wd.svgからzeimusu_sakura_.svgに変更
+2,VMLがstandard-compliantモードで表示されなくなるバグを表示できるように修正 (#12065)
+3,弧の扇形をうまく表示できるようにバグを修正 (#12066)
+4,sinなどの計算の効率化
+
+2008-3-8　SIE version0.11の公開。version0.10からの主な変更
+1,Siebに対応
+2,Text2SVG機能の強化
+3,stroke-dasharray属性のバグを修正
+4,viewBox属性のバグを修正
+5,不要な変数を削除
+6,ソースにコメントをつけた
+
+2008-2-9 0.10公開 0.10beta2からの変更点
+-d属性において、連続した相対座標をサポート
+-リンクの上にポインタを置いたら、表示を変更させる
+
+2008-2-6 0.10beta2の公開  0.10beta1からの変更点
+-line要素のサポート
+-path要素のd属性における、パーサのエラーを修正
+-d属性において、相対座標を絶対座標に変換させるようにした
+-d属性において、負の値をすべて、正の値に変換
+-Sコマンドのサポート
+-text要素のwidthプロパティを必ず「0」に設定
+-Mコマンド以降に、コマンドがなければ、Lコマンドとして処理
+
+2008.1.31  0.10alpha2からの変更
+-path要素のd属性の中にある、負の値がそのまま正の値に変換する問題に対処した。
+
+2008.1.22　バージョン0.10のアルファ版1を公開

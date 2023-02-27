@@ -1,0 +1,139 @@
+﻿<!xml version="1.0" encoding="utf-8"!>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SIE - 標準的な2Dベクタ画像のSVGを表示するJavaScriptライブラリ</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script defer="defer" type="text/javascript" src="sie-mini.js"></script>
+<link rel="stylesheet" type="text/css" href="http://sie.sourceforge.jp/instyle.css"></link>
+</head>
+<body>
+<h1>SIE - 標準的な2Dベクタ画像のSVGを表示するJavaScriptライブラリ</h1>
+<h2>SIEとは</h2>
+<p>SIEとは、標準的な2Dベクタ画像のSVGを表示するためのライブラリです。JavaScript言語で設計されています。プラグインは不要です。例えば、インターネットエクスプローラー（Internet Explorer、以下、IE)やその他のブラウザで、SVGを表示できます。</p>
+<h3>特徴</h3>
+<ol>
+ <li>クロスブラウザ（IEとFirefoxとOperaとSafari）</li>
+ <li>プラグインが必要ない</li>
+ <li>SVG画像を表示できる</li>
+</ol>
+<h3>ライセンス</h3>
+<p>無償のオープンソースとして公開しているので、どうぞご自由にお使いください。</p>
+<p>ライセンスはオープンソースのMozilla Public Licence（MPL1.1）で提供しています。</p>
+<h2>目次</h2>
+<ol>
+ <li>使い方</li>
+ <li>デモ</li>
+ <li>動作環境</li>
+ <li>注意</li>
+ <li>連絡先</li>
+</ol>
+<h2>使い方</h2>
+<h3>解凍が終わったら</h3>
+<p>中身を確認してください。以下のとおりです。SIEの本体は、sie.js です。</p>
+<h3>準備するもの</h3>
+<p>HTML文書のページと、SVG画像を作って、用意してください。（今回は、Inkscapeで作られたSVG画像の「zeimusu_sakura_.svg」を用います）</p>
+<h3>ネットの公開のしかた</h3>
+<ol>
+ <li>HTML文書を、「メモ帳」など、テキスト編集ソフトで開いて、「&lt;script defer="defer" type="text/javascript" src="sie.js"&gt;&lt;/script&gt;」をhead要素の中に追加してください。たとえば、<blockquote>&lt;head&gt;
+&lt;title&gt;IESVG&lt;/title&gt;
+&lt;script defer="defer" type="text/javascript" src="sie.js"&gt;&lt;/script&gt;&lt;/head&gt;</blockquote>というように。<textarea rows="2" cols="40">&lt;script defer="defer" type="text/javascript" src="sie.js"&gt;&lt;/script&gt;</textarea>
+</li>
+ <li>さらに、body要素の中に、「&lt;object data="zeimusu_sakura_.svg" type="image/svg+xml" width="1000" height="1000"&gt;&lt;/object&gt;」とコピーして入れます。以下のサンプルのようになります。</li>
+ <li>編集したHTML文書とSVG画像、それに、sie.jsをネット上にアップロードすればOKです。<strong>必ず、アップロードしてください</strong>。</li>
+</ol>
+<h2>デモ（zeimusu_sakura_.svg）</h2>
+<pre>&lt;html  xmlns="http://www.w3.org/1999/xhtml"&gt;
+&lt;head&gt;
+&lt;title&gt;SIE&lt;/title&gt;
+&lt;script defer="defer" type="text/javascript" src="sie.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" type="text/css" href="instyle.css"&gt;&lt;/link&gt;
+&lt;/head&gt;
+&lt;body onLoad="svgtovml()"&gt;
+&lt;h1&gt;SIE - プラグインなしでIEにSVGを表示する方法&lt;/h1&gt;
+
+&lt;h2&gt;デモ（ant.svg）&lt;/h2&gt;
+&lt;object data="<strong>zeimusu_sakura_.svg</strong>" type="image/svg+xml" width="180" height="200"&gt;&lt;/object&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+<form>
+<textarea rows="10" cols="40">&lt;html  xmlns="http://www.w3.org/1999/xhtml"&gt;
+&lt;head&gt;
+&lt;title&gt;SIE&lt;/title&gt;
+&lt;script defer="defer" type="text/javascript" src="sie.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" type="text/css" href="instyle.css"&gt;&lt;/link&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;SIE - プラグインなしでIEにSVGを表示する方法&lt;/h1&gt;
+
+&lt;h2&gt;サンプル（ant.svg）&lt;/h2&gt;
+&lt;object data="zeimusu_sakura_.svg" type="image/svg+xml" width="180" height="200"&gt;&lt;/object&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</textarea>
+</form>
+<object data="zeimusu_sakura_.svg" type="image/svg+xml" width="180" height="200"></object>
+<h2>動作環境</h2>
+<p>ActiveXが有効なIE6、7、8で確認</p>
+<p>その他、Firefox12、Opera12、Safari3.1.2 (以上、環境はWindowsXP SP3)</p>
+<h2>注意</h2>
+<p>必ず、サーバにアップロードしてください。IEのセキュリティ上、ローカルでは動きません。また、IE6-8をお使いの方はActiveXは有効にしておいてください。</p>
+<p>極力、object要素をお使いください。embed要素は、IE6において、警告の窓がポップアップします。IE7では異常はありません。</p>
+<h2>コミュニティ</h2>
+<h3>メーリングリスト</h3>
+<p><a href="sie-developers@lists.sourceforge.jp">sie-developers@lists.sourceforge.jp</a>。ログインページは<a href="http://lists.sourceforge.jp/mailman/listinfo/sie-developers">SIEの公式メーリングリスト</a>。</p>
+<h3>バグの報告先</h3>
+<p><a href="http://sourceforge.jp/projects/sie/ticket/">チケット</a>。バグを追跡できるシステム。</p>
+<p><a href="http://d.hatena.ne.jp/dhrname/">dhrnameの開発日誌</a>。開発ブログです。</p>
+<p><a href="http://twitter.com/dhrname">http://twitter.com/dhrname</a>。英語で開発のつぶやきを提供しています。</p>
+<h2>SIEのパッケージ一覧</h2>
+<ul>
+<li>sie.js (本体)</li>
+<li>Readme.html (解説のページ)</li>
+<li><a href="README_EN.txt">README_EN.txt (解説の英語版)</a></li>
+<li><a href="ChangeLog.txt">ChangeLog.txt (SIEの変更履歴)</a></li>
+<li>tool (補助ツール)<ul>
+  <li>sie_php  (SVGファイルを直接ブラウザに表示できるPHP。revulo氏が作成)</li>
+  <li>svg-in-html  (インラインSVGを実現するスクリプト)</li>
+  <li>SieReader  (URLで?の後に指定されたファイル名のSVGを読みとることができるHTML文書)</li>
+  <li>funcproto (非同期処理の操作ができるライブラリ)
+</ul></li>
+<li>sie.js.gz (sie.jsをgzipで圧縮したもの）</li>
+<li>zeimusu_sakra_.svg (SVG形式のサンプル画像)</li>
+<li>org (ソースコード)<ul>
+<li>sie-uncompressed.js (sie.jsのオリジナルソース）</li>
+<li>build.php (SIEのモジュールを一つのファイルにして、オリジナルソースを作成するプログラム)</li>
+<li>w3c (SIEのモジュールを収納したディレクトリ)</li>
+</ul></li>
+</ul>
+<p>最後に、revulo氏, bellbind氏と、<a href="http://sourceforge.jp/"><img src="http://sourceforge.jp/sflogo.php?group_id=3313" width="96" height="31" border="0" alt="SourceForge.jp"></a>さんに謝意を述べたいと思います。</p>
+<address>&copy; Copyright 2003 dhrname（Eメールで<a href="mailto:sie-developers@lists.sourceforge.jp">sie-developers@lists.sourceforge.jp</a>））。このページの許諾に関しても、SIEと同様のライセンスが適用されるものとします。</address>
+<!--/*SIE-SVGtoVML LGPL2.1 & GPL1.1 & Mozilla Public Lisence*/
+/* ***** BEGIN LICENSE BLOCK *****
+ * Version: MPL 1.1/GPL 2.0/LGPL 2.1
+ *
+ * The contents of this file are subject to the Mozilla Public License Version
+ * 1.1 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ * http://www.mozilla.org/MPL/
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ * for the specific language governing rights and limitations under the
+ * License.
+ *
+ * Contributor(s):DHRNAME
+ *
+ * Alternatively, the contents of this file may be used under the terms of
+ * either of the GNU General Public License Version 2 or later (the "GPL"),
+ * or the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+ * in which case the provisions of the GPL or the LGPL are applicable instead
+ * of those above. If you wish to allow use of your version of this file only
+ * under the terms of either the GPL or the LGPL, and not to allow others to
+ * use your version of this file under the terms of the MPL, indicate your
+ * decision by deleting the provisions above and replace them with the notice
+ * and other provisions required by the GPL or the LGPL. If you do not delete
+ * the provisions above, a recipient may use your version of this file under
+ * the terms of any one of the MPL, the GPL or the LGPL.
+ *
+ * ***** END LICENSE BLOCK ***** */-->
+    </body>
+</html>

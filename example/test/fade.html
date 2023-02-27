@@ -1,0 +1,54 @@
+<!xml version="1.0" encoding="utf-8"!>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>test</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8">
+<link rel="stylesheet" type="text/css" href="../static/styles/css/test.css">
+	<!--[if lte IE 8]>
+	<script defer="defer" type="text/javascript" src="../static/scripts/eis.js"></script> 
+	<![endif]-->
+</head>
+<body>	
+<span id="svgtest" type="image/svg+xml" width="800" height="800">
+  <svg width="800" height="800" xmlns="http://www.w3.org/2000/svg">          
+    <defs>
+      <path id="MyPath"
+            d="M 100 200
+               C 200 100 300   0 400 100
+               C 500 200 600 300 700 200
+               C 800 100 900 100 900 100" />
+    </defs>
+  
+    <use xlink:href="#MyPath" fill="none" stroke="red"  />
+  
+    <text font-family="Verdana" font-size="42.5">
+      <textPath xlink:href="#MyPath">
+        We go up, then we go down, then up again
+      </textPath>
+    </text>
+     
+    <g>
+
+      <polygon
+       stroke="black"
+       fill="none"
+       transform="translate(12,0)"
+       points="50,0 21,90 98,35 2,35 79,90" />
+       <polygon
+       stroke="black"
+       fill="none"
+       transform="translate(100,0)"
+       points="50,0 21,90 98,35 2,35 79,90" />  
+       <circle cx="60" cy="60" r="30" opacity="0.3"> 
+      </circle>       
+      <animate id="fade" begin="0s;fade.end" attributeName="opacity" attributeType="XML"
+      values="1;0;1"  dur="6s" /> 
+      <animate attributeName="fill" attributeType="XML"
+        from="white" to="yellow" begin="fade.end" dur="6s" />    
+   </g>
+  </svg>
+   
+	</span>		
+</body>
+</html>

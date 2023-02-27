@@ -1,0 +1,306 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>Jasmine Test Runner for Function Prototype</title>
+  <link rel="stylesheet" type="text/css" href="../Spec/lib/jasmine-1.0.1/jasmine.css">
+  <script type="text/javascript" src="../Spec/lib/jasmine-1.0.1/jasmine.js"></script>
+  <script type="text/javascript" src="../Spec/lib/jasmine-1.0.1/jasmine-html.js"></script>
+</head>
+<body>
+<!-- Copyright (c) 2008-2010 Pivotal Labs
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ -->
+<script  type="text/javascript">
+  function __start_() {
+    jasmine.getEnv().addReporter(new jasmine.TrivialReporter());
+    jasmine.getEnv().execute();
+  }
+</script>
+  <!-- include source files here... -->
+<script type="text/javascript" src="openfile.js"></script>
+<script type="text/javascript" src="sleep.js"></script>
+<script type="text/javascript" src="base.js"></script>
+
+<script type="text/javascript">
+(function (file) {
+  describe("Open File to parse XML", function() {
+    var ele;
+    beforeEach(function() {
+      ele = file.read("element");
+    });
+    it("a read method", function() {
+      expect(ele.nodeName).toEqual("svg");
+    });
+  });
+}).open("../../document/svg_sample/4wd.svg");
+
+f.open("a.txt", "b.txt", "UNDEF.txt", "UNDEF.txt", "b.txt");
+
+function f (file) {
+  var args = arguments;
+  describe("File::open", function() {
+    it("for a read method", function() {
+      expect(file.read()).toEqual("123456785678");
+      expect(file["a.txt"]).toEqual("1234");
+      expect(file["b.txt"]).toEqual("5678");
+      expect(file[0]).toEqual("1234");
+      expect(file[1]).toEqual("5678");
+      expect(file["UNDEF.txt"]).toEqual("");
+      expect(file[2]).toEqual("");
+      expect(file[3]).toEqual("");
+      expect(file[4]).toEqual("5678");
+      expect(file.write("30d")).toEqual("30d");
+    });
+    var f;
+    beforeEach(function() {
+      f = function() {};
+    });
+    it("default property", function() {
+      expect(f.open("a")).toEqual(f);
+      f = function(file, a, b, c) {
+        describe("File::open2", function() {
+          it("default property", function() {
+            expect(a[0]).toEqual("h");
+            expect(b).toEqual(0);
+            expect(c).toEqual("a.txt");
+            expect(file[0]).toEqual("");
+            expect(file[1]).toBeUndefined();
+            expect(file[2]).toBeUndefined();
+            expect(file[3]).toBeUndefined();
+            expect(file["a.txt"]).toBeUndefined();
+            expect(file["a"]).toEqual("");
+            expect(file.read()).toEqual("");
+          });
+        });
+        __start_();
+      };
+      f.open("a", ["h"], 0, "a.txt");
+    });
+    it("arguments inheritance", function() {
+      expect(args[1]).toEqual("b.txt");
+      expect(args[2]).toEqual("UNDEF.txt");
+      expect(args[3]).toEqual("UNDEF.txt");
+      expect(args[4]).toEqual("b.txt");
+    });
+    it("error check", function() {
+      expect(function() {
+        f.oepn();
+      }).toThrow();
+      expect(function() {
+        f.oepn("");
+      }).toThrow();
+      expect(function() {
+        f.oepn(["y"]);
+      }).toThrow();
+      expect(function() {
+        f.oepn({x:"x"});
+      }).toThrow();
+    });
+  });
+  __start_();
+};
+
+describe("Async::sleep", function() {
+  it("a sleep method chain", function() {
+    var f = function(){};
+    expect(f.sleep()).toEqual(f);
+  });
+});
+
+function fn (result) {
+  var that = this;
+  describe("Async::sleep2", function() {
+    it("default action", function() {
+      expect(result).toEqual(0);
+      expect(that).toEqual(fn);
+    });
+  });
+  return result+1;
+}
+fn.sleep();
+
+(function (result) {
+  var that = this;
+  describe("Async::sleep3", function() {
+    it("default action2", function() {
+      expect(result).toEqual(1);
+      expect(that.back).toEqual(fn);
+    });
+  });
+  __start_();
+}).sleep();
+
+
+describe("Async::Sleep4", function() {
+  it("arguments", function() {
+    var a = {};
+    (function(result, ac, ab, aa) {
+      expect(arguments[1]).toEqual(12);
+      expect(arguments[2]).toEqual("he");
+      expect(arguments[3]).toEqual(a);
+      expect(aa).toEqual(a);
+    }).sleep(0, 12, "he", a);
+  });
+});
+
+describe("base.js", function() {
+  var gl = (function(){return this;})(); //グローバルオブジェクト
+  it("cascading inherit", function() {
+      /*カスケード継承 (cascading inherit)に関するスペック*/
+      base("$parent").mix( function() {
+        this.hoge = function() {
+          return 12;
+        };
+        this.up("$child").mix( function() {
+          this.hoge = function() {
+            return this.$parent.hoge();
+          };
+        });
+      });
+      expect(base("$parent")).toEqual(gl.$parent);
+      expect(base("$parent").$child).toEqual(gl.$parent.$child);
+      expect(base("$parent").$child.hoge()).toEqual(12);
+      expect(base("$parent").hoge()).toEqual(12);
+      expect(gl.$parent.$child.hoge()).toEqual(12);
+      expect(base("$parent").$child.hoge).not.toEqual(base("$parent").hoge());
+  });
+  it("a function base", function() {
+    var falsyList = ["", null, 0, undefined],
+        i = falsyList.length;
+    expect(function(){
+      base();
+    }).toThrow();
+    while(i--) {
+      expect(function(){
+        base(falsyList[i]);
+      }).toThrow();
+    }
+    expect(typeof base("$wo")).toBe("object");
+    expect(base("$w")).toBe(base("$w"));
+    expect(base("$w")).toBe(gl.$w);
+  });
+  it("a constructor property (method)", function() {
+    expect(base("$wt").constructor.prototype).toBe(gl);
+    expect(base("$wt").up("$wu").constructor.prototype).toBe(base("$wt"));
+  });
+  it("a mix method", function() {
+    expect(typeof base("$a").mix).toBe("function");
+    expect(base("$a").mix({})).toBe(base("$a"));
+    expect(base("$a").mix(function(){})).toBe(base("$a"));
+    
+    var falsyList = ["", null, 0, undefined],
+        i = falsyList.length;
+    expect(function(){
+      base("$a").mix();
+    }).toThrow();
+    while(i--) {
+      expect(function(){
+        base("$a").mix(falsyList[i]);
+      }).toThrow();
+    }
+    
+    /*argument to object*/
+    base("$a").mix({
+      a: 12,
+      b: {
+        d: 12
+      },
+      c: function(){
+        return (this.a+3);
+      }
+    });
+    expect(base("$a").a).toEqual(12);
+    expect(base("$a").b.d).toEqual(12);
+    expect(base("$a").c()).toEqual(15);
+    
+    /*argument to function*/
+    base("$b").mix( function() {
+      this.a = 12;
+      this.b = {
+        d: 12
+      };
+      this.c = function(){
+        return (this.a+3);
+      };
+    });
+    expect(base("$b").a).toEqual(12);
+    expect(base("$b").b.d).toEqual(12);
+    expect(base("$b").c()).toEqual(15);
+    
+    base("$a").mix({
+      a: 0,
+      b: {
+        d: -12
+      },
+      c: function(){
+        return (this.a+3);
+      }
+    });
+    expect(base("$a").a).toEqual(0);
+    expect(base("$a").b.d).toEqual(-12);
+    expect(base("$a").c()).toEqual(3);
+    
+    base("$a").mix(Math);
+    expect(base("$a").pi).toEqual(Math.pi);
+  });
+  it("an up method", function() {
+    expect(typeof base("$c").up).toEqual("function");
+    
+    expect(base("$c").up("$a")).not.toBe(base("$a"));
+    
+    expect(base("$c").up("$c")).not.toBe(base("$c"));
+    /*もう一度繰り返す (reapeat)*/
+    expect(base("$c").up("$c")).not.toBe(base("$c"));
+    
+    expect(base("$c").$c).toBe(gl.$c.$c);
+    expect(base("$c").$c.up("$c")).not.toBe(base("$c"));
+    expect(gl.$c.$c.up("$c")).toBe(base("$c").$c.$c.$c);
+    
+    /*オブジェクト$cのhogeプロパティの継承*/
+    base("$c").hoge = 12;
+    expect(base("$c").$c.hoge).toEqual(12);
+    expect(base("$c").$c.$c.hoge).toEqual(12);
+    expect(base("$c").$c.$c.$c.hoge).toEqual(12);
+    
+    /*プロトタイプチェーン上のオブジェクトも合成できるようにする*/
+    base("$c").mix({
+        aa: 12
+      }).up("$1").mix({
+        bb: 15
+      });
+    base("$d").mix(base("$c").$1);
+    expect(base("$d").aa).toEqual(12);
+    expect(base("$d").bb).toEqual(15);
+    expect(base("$d").$1).toBe(base("$c").$1);
+    base("$d").mix(function() {
+      expect(this.$c.aa).toEqual(12);
+      expect(this.$1.aa).toEqual(12);
+      expect(this.$1.bb).toEqual(15);
+    });
+
+  });
+});
+</script>
+  <!-- include spec files here... -->
+
+</body>
+</html>

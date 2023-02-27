@@ -1,0 +1,242 @@
+@font-face {
+	font-family: 'manhuiweidu';
+	src: url('../commons/fonts/manhuiweidu.eot?v=0.0.1');
+	src: url('../commons/fonts/manhuiweidu.eot?#iefix&v=0.0.1') format('embedded-opentype'),
+		url('../commons/fonts/manhuiweidu.woff2?v=0.0.1') format('woff2'),
+		url('../commons/fonts/manhuiweidu.woff?v=0.0.1') format('woff'),
+		url('../commons/fonts/manhuiweidu.svg?v=0.0.1#manhuiweidu') format('svg'),
+		url('../commons/fonts/manhuiweidu.otf?v=0.0.1') format('opentype'),
+		url('../commons/fonts/manhuiweidu.ttf?v=0.0.1') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.header_ad #logo{
+    font-size: 48px;
+    color: #ce3a3a;
+    font-weight: bold;
+    margin: 0px 35px 0px 10px;
+}
+
+.header_ad #eight{
+    font-size: 48px;
+    color: white;
+    margin: 0px 0px 0px 0px;
+}
+
+body {
+	font: 12px/32px "Noto Sans SC", "\5FAE\8F6F\96C5\9ED1", "Noto Sans", Helvatica, Tahoma, "\5E7C\5706", "\534E\6587\7EC6\9ED1", Arial, "\5B8B\4F53";
+	padding: 0;
+	margin: 0;
+	color: #b0bfcb;	
+	*font: 12px/32px "Noto Sans SC", "\5FAE\8F6F\96C5\9ED1", "Noto Sans", Helvatica, "\5E7C\5706", "\534E\6587\7EC6\9ED1", "\5B8B\4F53";
+}
+
+#view_pannel table {
+	margin: 10px;
+	text-align: center;
+}
+
+#view {
+	width: 95%;
+	border-left: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	margin: auto;
+}
+
+#view tr td {
+	border-bottom: 1px solid #ccc;
+	margin: 0px;
+	line-height: 20px;
+	border-right: 1px solid #ccc;
+	width: 120px;
+}
+
+#view .left {
+	background: #efefef;
+}
+
+.toolbar {
+	height: 28px;
+	background: #efefef;
+	padding: 1px 2px;
+	border-bottom: 1px solid #ccc;
+}
+.error{
+	color:#f00;
+}
+
+div.easyui-panel.panel-body .toolbar {
+	text-align: left;
+}
+
+div.easyui-panel.panel-body .toolbar .easyui-linkbutton span {
+	width: 50px;
+	padding: 4px;
+	text-align: center;
+	border: 0px;
+	background-color: transparent;
+}
+
+#view_pannel table {
+	margin: 10px;
+	text-align: center;
+}
+
+#view {
+	width: 95%;
+	border-left: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	margin: auto;
+}
+
+#view tr td {
+	border-bottom: 1px solid #ccc;
+	margin: 0px;
+	line-height: 20px;
+	border-right: 1px solid #ccc;
+	width: 120px;
+}
+#view tr th {
+	border-bottom: 1px solid #ccc;
+	margin: 0px;
+	line-height: 20px;
+	border-right: 1px solid #ccc;
+	width: 120px;
+}
+#view .left {
+	background: #efefef;
+}
+
+.tableLabel{
+	font-weight:bold;
+	font-size:10pt;
+}
+
+#tt li ul li{
+	display : inline-block;
+	width : 20%;
+	margin-left: 3%;
+}
+
+#tt > li{
+	clear: both;
+}
+
+#tt2 li ul li ul li{
+	display : inline-block;
+	width : 10%;
+	margin-left: 2%;
+}
+
+#tt2 > li{
+	clear: both;
+}
+
+#tt1 li ul li ul li{
+	display : inline-block;
+	width : 10%;
+	margin-left: 2%;
+}
+
+#tt1 > li{
+	clear: both;
+}
+
+.bold{
+	font-weight: bold;	
+}
+
+.layout-split-west{
+	border-right:1px solid #FFF;
+}
+
+.panel-tool {
+    position: absolute;
+    right: 0;
+    top: 20px;
+    height: 32px;
+}
+.accordion-collapse {
+  background:none;
+}
+.accordion-expand {
+  background:none;
+}
+.panel-tool a:hover{
+	background-color: inherit;	
+}
+
+.panel-fit, .panel-fit body {
+	width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+}
+
+.awesome-font-icon{
+    font-size: 16px;
+    color: #17689e;  
+    vertical-align: middle;
+    _height: 22px;  
+}
+.awesome-font-label{
+    margin-left: 4px;
+    vertical-align: middle;	
+}
+/* a.l-btn span span.l-btn-text{
+	-pie-png-fix: true;
+	float: left;
+	margin: 0px 0px 0px 1px; make dialog icon transparent with some bug
+	-pie-watch-ancestors: 6;another try success; analyse the dom ancestors and watch
+	position: relative;
+	behavior: url(static/scripts/PIE.htc);
+} */
+a.l-btn span span span.l-btn-empty{
+	-pie-png-fix: true;
+	position: relative;
+	behavior: url(static/scripts/PIE.htc);
+}
+
+.mhwd {
+	font-family: manhuiweidu;
+	font-style: normal;
+	font-weight: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	_letter-spacing: expression((navigator.appVersion.toUpperCase().indexOf('98') >  -1) || (navigator.appVersion.toUpperCase().indexOf('ME') >  -1) || (navigator.appVersion.toUpperCase().indexOf('9X') >  -1) ? "0.3em" : "auto");
+  }
+  
+  .mhwd-logo:before {
+	content: "\f000";
+  }
+  
+  .mhwd-logo {
+	*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf000;');
+	_padding-right: expression((navigator.appVersion.toUpperCase().indexOf('98') >  -1) || (navigator.appVersion.toUpperCase().indexOf('ME') >  -1) || (navigator.appVersion.toUpperCase().indexOf('9X') >  -1) ? "0.8em" : "auto");
+  }
+  
+  .mhwd-eight:before {
+	content: "\f011\f012\f013";
+  }
+  
+  .mhwd-eight {
+	*zoom: expression( this.runtimeStyle['zoom'] = '1',  this.innerHTML = '&#xf011;&#xf012;&#xf013;');  
+	_padding-right: expression((navigator.appVersion.toUpperCase().indexOf('98') >  -1) || (navigator.appVersion.toUpperCase().indexOf('ME') >  -1) || (navigator.appVersion.toUpperCase().indexOf('9X') >  -1) ? "0.3em" : "auto");  
+  }
+  
+  .mhwd-eight-thin:before {
+	content: "\f001\f002\f003";
+  }
+  
+  .mhwd-eight-thin {
+	*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf001;&#xf002;&#xf003;');
+	_padding-right: expression((navigator.appVersion.toUpperCase().indexOf('98') >  -1) || (navigator.appVersion.toUpperCase().indexOf('ME') >  -1) || (navigator.appVersion.toUpperCase().indexOf('9X') >  -1) ? "0.3em" : "auto");  
+  }
+  
+  .fa{
+    _letter-spacing: expression((navigator.appVersion.toUpperCase().indexOf('98') >  -1) || (navigator.appVersion.toUpperCase().indexOf('ME') >  -1) || (navigator.appVersion.toUpperCase().indexOf('9X') >  -1) ? "0.4em" : "auto"); 
+	  _padding-right: expression((navigator.appVersion.toUpperCase().indexOf('98') >  -1) || (navigator.appVersion.toUpperCase().indexOf('ME') >  -1) || (navigator.appVersion.toUpperCase().indexOf('9X') >  -1) ? "0.4em" : "auto");
+  }

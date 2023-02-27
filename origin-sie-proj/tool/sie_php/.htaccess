@@ -1,0 +1,6 @@
+AddEncoding gzip svgz
+
+RewriteEngine on
+RewriteCond %{REQUEST_URI} \.svgz?$ [NC]
+RewriteCond %{HTTP_USER_AGENT} MSIE\ [5-8]
+RewriteRule .* sie.php [L]

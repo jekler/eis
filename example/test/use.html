@@ -1,0 +1,45 @@
+<!xml version="1.0" encoding="utf-8"!>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>test</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8">
+<link rel="stylesheet" type="text/css" href="../static/styles/css/test.css">
+	<!--[if lte IE 8]>
+	<script defer="defer" type="text/javascript" src="../static/scripts/eis.js"></script> 
+	<![endif]-->
+	<!--[if IE 6]><!-->        
+		<script>
+			var eis = {frameRate:3};
+	</script>
+	<!--<![endif]-->	
+</head>
+<body>	
+				
+<span  type="image/svg+xml" width="480" height="120">
+   <svg viewBox="0 0 80 20" xmlns="http://www.w3.org/2000/svg">
+      <!-- Our symbol in its own coordinate system -->
+      <symbol id="myDot" width="10" height="10" viewBox="0 0 32 32">
+        <circle cx="16" cy="16" r="16" />
+      </symbol>
+    
+      <!-- A grid to materialize our symbol positioning -->
+      <path
+        d="M0,10 h80 M10,0 v20 M25,0 v20 M40,0 v20 M55,0 v20 M70,0 v20"
+        fill="none"
+        stroke="pink" />
+		
+      <!-- group not support mouse event -->   
+	   <g>
+		<use   xlink:href="../static/images/demo.svg#pencil" fill="red" x="50%" y="50%" height="50%">
+
+			</use> 
+		<use xlink:href="../static/images/use.svg#circle-cross" fill="red" width="50%" height="50%" x="30%" y="20%">
+			</use> 		
+	
+	  </g>
+
+    </svg>  
+	</span>		
+</body>
+</html>

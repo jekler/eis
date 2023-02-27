@@ -1,0 +1,47 @@
+.box{
+	border: 1px solid #696;
+	padding: 60px 0;
+	text-align: center; width: 200px;
+	-webkit-border-radius: 400px;
+	-moz-border-radius: 400px;
+	border-radius: 400px;
+	-webkit-box-shadow: #666 20px 20px 3px;
+	-moz-box-shadow: #666 20px 20px 3px;
+	box-shadow: #666 20px 20px 3px;
+	background: #FF99E9;
+	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#FF99E9), to(#3358EE));
+	background: -webkit-linear-gradient(#FF99E9, #3358EE);
+	background: -moz-linear-gradient(#FF99E9, #3358EE);
+	background: -ms-linear-gradient(#FF99E9, #3358EE);
+	background: -o-linear-gradient(#FF99E9, #3358EE);
+	background: linear-gradient(#FF99E9, #3358EE);
+	-pie-background: linear-gradient(#139f4f, #3358EE);
+	behavior: url(/ui/PIE.htc);
+	color: red;
+
+}
+body{
+	background-color: #139f4f;
+}
+.box1{
+	border: 1px solid #696;
+	padding: 60px 0;
+	text-align: center; width: 200px;
+	-webkit-border-radius: 400px;
+	-moz-border-radius: 400px;
+	border-radius: 400px;
+	-webkit-box-shadow: #666 20px 20px 3px;
+	-moz-box-shadow: #666 20px 20px 3px;
+	box-shadow: #666 20px 20px 3px;
+	background: #FF99E9;
+	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#FF99E9), to(#3358EE));
+	background: -webkit-linear-gradient(#FF99E9, #3358EE);
+	background: -moz-linear-gradient(#FF99E9, #3358EE);
+	background: -ms-linear-gradient(#FF99E9, #3358EE);
+	background: -o-linear-gradient(#FF99E9, #3358EE);
+	background: linear-gradient(#FF99E9, #3358EE);
+	-pie-background: linear-gradient(#139f4f, #3358EE);
+	behavior: url(/ui/PIE.htc);
+	color: red;
+
+}

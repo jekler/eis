@@ -1,0 +1,27 @@
+<!xml version="1.0" encoding="utf-8"!>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>test</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8">
+<script defer="defer" type="text/javascript" src="../static/scripts/eos.js"></script> 
+	<link rel="stylesheet" type="text/css" href="../static/styles/css/ie.css">
+
+	<!--[if lte IE 8]><!-->  
+		<script>
+			var stylesheet = document.styleSheets[0];
+			var path = window.location.href;
+			var url = path.substring(0, path.lastIndexOf('/')) + '/../static/scripts';
+			stylesheet.addRule('.svg ', 'behavior: url(' + url + '/eis.htc);');
+			var eis = {frameRate:0.1, delay: -1};
+		</script>
+	<!--<![endif]-->
+</head>
+<body>
+	<div id="inline">inline</div>
+	<div id="object">object</div>		
+	<div id="content" class="svgwrap">test</div>
+</body>
+	<script type="text/javascript" src="../static/scripts/jquery.min.js"></script>
+	<script defer="defer" type="text/javascript" src="../static/scripts/test.js"></script> 
+</html>
