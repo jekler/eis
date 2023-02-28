@@ -53,11 +53,18 @@ eis½¨Á¢ÔÚsie(http://sie.sourceforge.jp/) v15°æ±¾»ù´¡ÉÏ,ÐÂÔö¸÷Ïî¹¦ÄÜ²¢¼¯³ÉÆäËüÄ£¿
 * ÆäËüÈô¸ÉÏ¸Î¢´íÎóµ÷Õû
 
 **ÒÑÖªÎÊÌâ
-* ²¿·ÖÐ§¹ûÎ´ÊµÏÖ£¨fontµÄÌØÐ§äÖÈ¾£¬fontµÄpathäÖÈ¾µÈ£©
+* ²¿·ÖÐ§¹ûÎ´ÊµÏÖ£¨fontµÄÌØÐ§äÖÈ¾£¬fontµÄpathÅÅ°æµÈ£©
 * transform³ýskewÍâ£¬rotateµÈÆäËüÊµÏÖ¶¼ÓÐ»ò¶à»òÉÙµÄÎÊÌâ
 * ²¿·Ö¶¯»­Ð§¹ûÎ´ÊµÏÖ£¨animateMationµÄpathÔË¶¯£¬animationTransform¶¯»­£©
-* ²¿·Ö¶¯»­Í¬Ê±Ê¹ÓÃÊ±´æÔÚ³åÍ»£¨ÈçÍ¸Ã÷½¥±äÎÞ·¨ÓëÆäËüaniamteÊôÐÔºÍanimateMotionÍ¬Ê±Ê¹ÓÃ£¬animateColorÎÞ·ÇÓëanimateMotionÍ¬Ê±Ê¹ÓÃ£¬Ö÷ÒªÊÇ¸´ÔÓµÄÊÂ¼þ×´Ì¬»úµ¼ÖÂ£©
-* Ò»×éÈÎÎñÖÐ¶à´¦¶¯»­Í¬Ê±ÔËÐÐÊ±£¬×îºóÒ»Ïî¶¯»­ÏÈÔËÐÐÍêºóÆäÓà¶¯»­Í£Ö¹£¨ÓëÊ¹ÓÃµ¥¶¯»­´¦Àí»úÓÐ¹Ø£©
-* ³ýÁËie8ÒÔÍâ£¬²»ÄÜÕæÕýÍ¸Ã÷»¯£¬¶øÊÇÒÔÔ­±³¾°É«ÄâÌ¬¡£ÕâÑù¾ÍÎÞ·¨Ê¹¶à¸öÍ¼Æ¬µþ¼Ó£¬Ò²²»ÄÜ²ÉÓÃ½¥±ä»ò¸´ÔÓÍ¼°¸µÄ±³¾°¡£(ÓÉÓÚ¸ÃÏîÄ¿svgÈÝÆ÷²ÉÓÃÁËiframe¿ò¼Ü£¬¶øiframeÔÚie5.5-7°æ±¾Ã»ÓÐÕæÕýµÄÍ¸Ã÷±³¾°£¬Ö»ÓÐie8ÔÚ±ê×¼Ä£Ê½ÏÂ¿ÉÒÔµÃµ½ÕæÕýµÄÍ¸Ã÷±³¾°£¬¸ßÓÚie8µÄ£¬¿ÉÒÔÊ¹ÓÃie8Ä£Ê½µÃµ½Í¸Ã÷Ð§¹û)
+* ²¿·Ö¶¯»­Í¬Ê±Ê¹ÓÃÊ±´æÔÚ³åÍ»£¨ÈçÍ¸Ã÷½¥±äÎÞ·¨ÓëÆäËüaniamteÊôÐÔºÍanimateMotionÍ¬Ê±Ê¹ÓÃ£¬animateColorÎÞ·ÇÓëanimateMotionÍ¬Ê±Ê¹ÓÃ£¬ÊÂ¼þ×´Ì¬»ú³åÍ»µ¼ÖÂ£©
+* Ò»×éÈÎÎñÖÐ¶à´¦¶¯»­Í¬Ê±ÔËÐÐÊ±£¬×îºóÒ»Ïî¶¯»­ÏÈÔËÐÐÍêºóÆäÓà¶¯»­Í£Ö¹£¨Ê¹ÓÃµ¥¶¯»­´¦ÀíÒýÇæÓÐ¹Ø£©
+* ÓëÏÖ´úä¯ÀÀÆ÷²»Í¬£¬²»ÄÜÊ¹ÓÃcss¶ÔsvgÔªËØ½øÐÐfill¡¢stroke¡¢¶¯»­»òÆäËûÌØÐ§äÖÈ¾¡£ÒòÎªie8ÒÔÏÂ¹Åµää¯ÀÀÆ÷²»ÄÜÊ¶±ðsvgÔªËØ£¬Ò²¾Í²»ÄÜÆ¥ÅäcssÅÅ°æ¡£µ«svgÄÚÇ¶css×¢½â¿ÉÒÔÕý³£Ê¹ÓÃ¡£
+* ÓëÏÖ´úä¯ÀÀÆ÷²»Í¬£¬²»ÄÜÊ¹ÓÃjsÔÚsvgäÖÈ¾ÒÔºó¶ÔsvgÔªËØ½øÐÐ²Ù×÷ÒÔ¸Ä±äÒ³ÃæÍ¼ÏñÐ§¹û¡£ÒòÎªie8ÒÔÏÂ¹Åµää¯ÀÀÆ÷²»ÄÜÊ¶±ðsvgÔªËØ£¬Ò²¾Í²»´æÔÚ²Ù×÷ÔªËØ¡£Í¬Ê±£¬eisÒýÇæÒÑ¾­¸ÄÐ´Ò³ÃæµÄsvgÄÚÈÝ²¢½«ÆäÇ¶ÈëÁíÍâµÄiframeÖÐ£¬ËùÒÔjsÒ²ÎÞ·¨»ñÈ¡ÕâÐ©½Úµã¡£µ«·´Ö®£¬svgÄÚµÄÔªËØÊÂ¼þ¿ÉÒÔÍ¨¹ýjs»ñÈ¡ºÍ²Ù×÷Ò³ÃæÆäËüÔªËØ£¬ÕâÊÇµ¥ÏòµÄ¡£svg±¾ÉíµÄ¶¯Ì¬Ð§¹ûºÍÊÂ¼þÏìÓ¦¿ÉÒÔÊ¹ÓÃÖ§³ÖµÄSIML¶¯»­¡£
+* ³ýÁËie8ÒÔÍâ£¬Í¼Æ¬±³¾°²»ÄÜÕæÕýÍ¸Ã÷»¯£¬¶øÊÇÒÔÔ­±³¾°É«ÄâÌ¬¡£ÕâÑù¾ÍÎÞ·¨Ê¹¶à¸öÍ¼Æ¬µþ¼Ó£¬Ò²²»ÄÜ²ÉÓÃ½¥±ä»ò¸´ÔÓÍ¼°¸µÄ±³¾°¡£(ÓÉÓÚ¸ÃÏîÄ¿svgÈÝÆ÷²ÉÓÃÁËiframe¿ò¼Ü£¬¶øiframeÔÚie5.5-7°æ±¾Ã»ÓÐÕæÕýµÄÍ¸Ã÷±³¾°£¬Ö»ÓÐie8ÔÚ±ê×¼Ä£Ê½ÏÂ¿ÉÒÔµÃµ½ÕæÕýµÄÍ¸Ã÷±³¾°)
+* Óëcss3pie´æÔÚÇ±ÔÚ³åÍ»£¬µ±css3pieÊ¹ÓÃhtc»òonload¼´Ê±ÔËÐÐÊ±£¬ÔÚie6µÈÂýËÙÒýÇæÏÂËæ»ú¿ÉÄÜ³öÏÖjsÒì³£¡£ÕâÊÇcss3pie¸ÄÐ´Ò³ÃædomÊ÷Ó°ÏìeisÒ³Ãæ½âÎöµ¼ÖÂµÄ¡£¿ÉÒÔÊ¹ÓÃcss3pieµÄjs¼ÓÔØ·½Ê½£¬settimeout 100ºÁÃëÑÓºóÖ´ÐÐ£¬Ò²¿ÉÒÔÉèÖÃeisµÄdelay²ÎÊýÑÓºóÖ´ÐÐeisÀ´±ÜÃâ£¨½¨ÒéÑÓºócss3pie£¬»ù±¾²»Ó°ÏìÒ³Ãæ³ÊÏÖËÙ¶È£©¡£ÁíÍâ£¬css3pie¿ÉÄÜÓ°ÏìÊ¹ÓÃspan»òdivµÄinline¼æÈÝÄ£Ê½µÄÑÕÉ«äÖÈ¾£¬µ«¶ÔÊ¹ÓÃscriptµÄinlineÄ£Ê½²»¹¹³ÉÓ°Ïì£¨scriptÄÚµÄsvgÏÖ´úä¯ÀÀÆ÷²¢²»Ö§³Ö£¬µ«¿ÉÒÔ¼ÓÒ»¶ÎjsÔÚonloadÊ±È¥µôscript wrapper¸ÄÎªÕý³£svgÀ´¼æÈÝ£©¡£
+* Ê¹ÓÃjqueryµÄhtml()»òjs±¾ÉíµÄinnerHTML¶¯Ì¬Éú³ÉsvgÊ±£¬ÓÉÓÚieµÄhtml parser´æÔÚ²»Ê¶±ðsvgÔªËØµÄÎÊÌâ£¬ÒÔspan»òdivµÈÔªËØwrapµÄsvg»á±»¶ªÆú£¨²»Ê¶±ðµÄ¾ÍÒª¶ªÆúÂð£¿Õâ¸öÖ»ÄÜÎÊieÁË£©£¬Ö»ÄÜÒÔscriptÎªwrapÐ´Èë£¬µ«ÆäËüä¯ÀÀÆ÷ÎÞ·¨Ê¶±ðscriptÄÚµÄsvg¡£¿ÉÒÔ·â×°Ò»¸öjqueryº¯Êý£¬ÅÐ¶Ïä¯ÀÀÆ÷ÀàÐÍÀ´Ê¹ÓÃ²»Í¬wrapÉú³ÉsvgÄÚÈÝ¡£
 * ie9ÒÔÉÏÓÉÓÚä¯ÀÀÆ÷×Ô´øsvg´¦Àí£¬²»ÄÜÕý³£Ê¹ÓÃ£¬µ«¿ÉÒÔÉùÃ÷²ÉÓÃie8Ä£Ê½µÃµ½Ö§³Ö¡£
+* ¶ÔÓÚopera 11.60ºÍfirefox 4ÒÔÏÂä¯ÀÀÆ÷£¬ÐèÒªÊ¹ÓÃeos²¿¼þ²ÅÄÜÔÚhtmlÄ£Ê½ÏÂäÖÈ¾svg¡£µ«ÐèÒª×¢ÒâÕâÐ©ä¯ÀÀÆ÷ÔÚhtml parseÊ±´æÔÚÈ¥³ýÎ²²¿ÖÕÖ¹·û£¨¾ÍÊÇÔªËØÎ²¡®/¡¯£©µÄÃ«²¡£¨Í¬ÑùÊÇÎÞÎ½µÄ¸ºÓÅ»¯£©¡£ÒòÎªËûÃÇÈÏÎªÕâÊÇ¸öhtmlÔªËØ£¬¶øhtmlÔªËØÎ²²¿ÊÇ²»ÐèÒª/µÄ¡£Õâµ¼ÖÂÔÙ¶ÈÒÔsvgÒýÇæ½âÎöÊ±£¬²¢ÐÐµÄ¶à¸ö×ÔÖÕÖ¹ÔªËØ£¨ÈçÒ»¸ögroupÄÚµÄ¶à¸öpath£©»á±»ÈÏ×÷×ÓÔªËØ£¬Ö»ÄÜäÖÈ¾µÚÒ»¸öÔªËØ¡£½â¾ö·½Ê½¼òµ¥£¬¾ÍÊÇÐ´svgÊ±±ðÓÃÎ²²¿ÖÕÖ¹·û£¬¶øÊÇÄÍÐÄÒ»µãÓÃÖÕÖ¹ÔªËØ£¨Ò²¾ÍÊÇÈç</path>ÕâÖÖ£©£¬±ÜÃâ½âÎö´íÎó¡£
+
+
 
