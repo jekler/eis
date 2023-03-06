@@ -9,7 +9,6 @@ EIS is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
 You should have received a copy of the GNU General Public License (and the GNU Lesser General Public License) along with EIS. If not, see https://www.gnu.org/licenses/.
 -->
 <PUBLIC:COMPONENT lightWeight="true">
-<PUBLIC:ATTACH EVENT="oncontentready" FOR="element" ONEVENT="init()" />
 <PUBLIC:ATTACH EVENT="ondocumentready" FOR="element" ONEVENT="init()" />
 <PUBLIC:ATTACH EVENT="ondetach" FOR="element" ONEVENT="cleanup()" />
 <script type="text/javascript">
@@ -110,11 +109,6 @@ function cleanup() {
     }
     el = void 0;
 }
-
-if( el.readyState === 'complete' ) {
-    init();
-}
-
 </script>
 <script type="text/vbscript"></script>
 </PUBLIC:COMPONENT>
