@@ -1,26 +1,15 @@
 /*!
 EIS (Eight's IE SVG)
-
 licensed for use under the GNU Lesser General Public License (LGPL) Version 3.
-
 Copyright © 2023 Beijing Manhuiweidu Technology Co., Ltd.
-
 You may find more information @ https://github.com/jekler/eis
-
 ***** BEGIN LICENSE BLOCK *****
-
 This file is part of EIS (Eight's IE SVG).
-
 EIS is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License (LGPL) Version 3 as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
-
 EIS is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
-
 You should have received a copy of the GNU General Public License (and the GNU Lesser General Public License) along with EIS. If not, see <https://www.gnu.org/licenses/>.
-
 ***** END LICENSE BLOCK *****
-
 origin from SIE-SVG, SIE-SVG is free software licensed for use under:
-
  *SIE-SVG without Plugin under LGPL2.1 & GPL2.0 & Mozilla Public License
  *http://sie.sourceforge.jp/
  *Usage: <script defer="defer" type="text/javascript" src="sie.js"></script>

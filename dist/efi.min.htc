@@ -1,0 +1,18 @@
+<!--
+Font glyphs(Eight's Font Icons)
+licensed for use under the GNU Lesser General Public License (LGPL) Version 3.
+Copyright © 2023 Beijing Manhuiweidu Technology Co., Ltd.
+You may find more information @ https://github.com/jekler/eis
+This file is part of EIS (Eight's IE SVG).
+EIS is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License (LGPL) Version 3 as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+EIS is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+You should have received a copy of the GNU General Public License (and the GNU Lesser General Public License) along with EIS. If not, see https://www.gnu.org/licenses/.
+-->
+<PUBLIC:COMPONENT lightWeight="true">
+<PUBLIC:ATTACH EVENT="ondocumentready" FOR="element" ONEVENT="show()" />
+<PUBLIC:ATTACH EVENT="ondetach" FOR="element" ONEVENT="cleanup()" />
+<script type="text/javascript">
+var elm=element,s=elm.style,cs=elm.currentStyle,key=s["efi-monitor"]||cs.getAttribute("efi-monitor");if(!key){key=elm.className.split(" ");if(key.length>0){key=key[0]}}if(!key){key=elm.id?"#"+elm.id:null}if(key){var efi=window.efi;if(!efi){window.efi=efi={_match:function(d,a){if(d){d=d.split(" ");if(d.length>0){for(var c=0;c<d.length;c++){var b=a[d[c]];if(b){return b}}}}return null},_getElements:function(o,q,k){var a=k.all,r=q?q.split(" "):null,j,f=[];for(var d=0,p=a.length;d<p;d+=1){j=a[d];try{if(j[o]&&q){var g=j[o].split(" ");outer:for(var c=0;c<g.length;c++){for(var b=0;b<r.length;b++){if(r[b]==g[c]){f.push(j);break outer}}}}}catch(h){}}return f}}}var context=efi[key];if(!context){var _type=s["efi-type"]||cs.getAttribute("efi-type")||"className",_self=s["efi-self"]||cs.getAttribute("efi-self"),_nostrict=s["efi-nostrict"]||cs.getAttribute("efi-nostrict"),_target=s["efi-target"]||cs.getAttribute("efi-target"),_content=s["efi-content"]||cs.getAttribute("efi-content");if(_content){_content=_content.split("|");var _c={};if(_content.length>0){for(var i=0;i<_content.length-1;i+=2){_c[_content[i]]=_content[i+1]}}efi[key]={type:_type,target:_target,self:_self,nostrict:_nostrict,content:_c}}}}s=cs=key=void 0;function show(){var b=window?window.efi:null;if(b&&elm){var d=b._match("#"+elm.id,b)||b._match(elm.className,b);if(d){var a=d.target?b._getElements(d.type,d.target,elm):[elm];if(a){if(d.self){var e=b._match("#"+elm.id,d.content)||b._match(elm.className,d.content);if(e){for(var c=0;c<a.length;c++){a[c].innerHTML=e}}else{if(!d.nostrict){for(var c=0;c<a.length;c++){a[c].innerHTML=""}}}}else{for(var c=0;c<a.length;c++){var e=b._match("#"+a[c].id,d.content)||b._match(a[c].className,d.content);if(e){a[c].innerHTML=e}else{if(!d.nostrict){a[c].innerHTML=""}}}}}}}}function cleanup(){var b=window?window.efi:null;if(b&&elm){var d=b._match("#"+elm.id,b)||b._match(elm.className,b);if(d){var a=d.target?b._getElements(d.type,d.target,elm):[elm];if(a){for(var c=0;c<a.length;c++){a[c].innerHTML=""}}}}};
+</script>
+<script type="text/vbscript"></script>
+</PUBLIC:COMPONENT>
