@@ -18,7 +18,7 @@ var elm = element,
     key = s['efi-monitor'] || cs.getAttribute('efi-monitor');
 if (!key) {
     key = elm.className.split(" ");
-    if (key.length > 0) key = key[0]
+    if (key.length > 0) key = key[0];
 }
 if (!key) key = elm.id ? '#' + elm.id : null;
 if (key) {
@@ -30,10 +30,25 @@ if (key) {
                     key = key.split(" ");
                     if (key.length > 0) for (var i = 0; i < key.length; i++) {
                         var context = config[key[i]];
-                        if (context) return context;
+                        if (context) return {
+                        	k: key[i], 
+                        	v: context
+                        };
                     };
                 }
                 return null;
+            },
+            _gen: function (config){
+            	var v = config.val, index = config.idx;
+            	if (v.charAt(0) == '<') {
+            		var wrap = elm.document.createElement('div');
+            		wrap.innerHTML = v;
+            		v = wrap.firstChild;
+            		if (index) for (var i = 0; i < index; i++) v = v.firstChild;
+            		wrap = void 0;
+            	} else v = elm.document.createTextNode(v);
+            	index = i = void 0;
+            	return v;
             },
             _getElements: function (type, value, elm) {
                 var elements = elm.all,
@@ -69,7 +84,29 @@ if (key) {
             _content = _content.split("|");
             var _c = {}
             if (_content.length > 0) for (var i = 0; i < _content.length - 1; i += 2) {
-                _c[_content[i]] = _content[i + 1];
+            	var k = _content[i], v = _content[i + 1], index = k.indexOf('='), flag = v.charAt(0);
+            	if (flag == '-') {
+            		flag = 1;
+            		v = v.substring(1);
+            	} else if (flag == '+') {
+            		flag = 2;
+            		v = v.substring(1);
+            	} else {
+            		flag = 0;
+            		if (flag == '=') v = v.substring(1);
+            	}
+            	if (v.charAt(0) == '<') flag += 3;
+            	if (index > -1 ) {
+            		var idx = parseInt(k.substring(index + 1));
+            		k = k.substring(0, index);
+            		index = idx ? idx : -1;
+            	}
+            	if (index < 0) index = void 0;
+                _c[k] = {
+                	val : v,
+                	idx : index,
+                	flag : flag
+                }
             }
             efi[key] = {
                 type: _type,
@@ -88,19 +125,44 @@ function show() {
     if (efi && elm) {
         var context = efi._match('#' + elm.id, efi) || efi._match(elm.className, efi);
         if (context) {
+            context = context.v;
             var targets = context.target ? efi._getElements(context.type, context.target, elm) : [elm];
-            if (targets) if (context.self) {
-                var content = efi._match('#' + elm.id, context.content) || efi._match(elm.className, context.content);
-                if (content) for (var i = 0; i < targets.length; i++) {
-                    targets[i].innerHTML = content;
-                } else if (!context.nostrict) for (var i = 0; i < targets.length; i++) {
-                    targets[i].innerHTML = '';
+            if (targets) {
+                if (context.self) {
+                    var content = efi._match('#' + elm.id, context.content) || efi._match(elm.className, context.content);
+                    if (content) {
+                        elm.setAttribute('efi-status', content.k);
+                        content = content.v;
+                        for (var i = 0; i < targets.length; i++) {
+                            var flag = content.flag, target = targets[i];
+                            if (flag && flag < 3 && target.innerText && !target.getAttribute('efi-origin'))  target.setAttribute('efi-origin', target.innerText);
+                            flag = content.flag % 3;
+                            if (flag == 1 && target.childNodes.length > 0) target.insertBefore(efi._gen(content), target.childNodes[0]);
+                            else {
+                                if (!flag) while(target.firstChild) target.removeChild(target.lastChild);
+                                target.appendChild(efi._gen(content))
+                            }
+                        } 
+                    } else if (!context.nostrict) for (var i = 0; i < targets.length; i++) {
+                        while(target.firstChild) target.removeChild(target.lastChild);
+                    };
+                } else for (var i = 0; i < targets.length; i++) {
+                    var content = efi._match('#' + target.id, context.content) || efi._match(target.className, context.content);
+                    if (content) {
+                        var target = targets[i];
+                        target.setAttribute('efi-status', content.k);
+                        content = content.v;
+                        var flag = content.flag;
+                        if (flag && flag < 3 && target.innerText && !target.getAttribute('efi-origin'))  target.setAttribute('efi-origin', target.innerText);
+                        flag = content.flag % 3;
+                        if (flag == 1 && target.childNodes.length > 0) target.insertBefore(efi._gen(content), target.childNodes[0]);
+                        else {
+                            if (!flag) while(target.firstChild) target.removeChild(target.lastChild);
+                            target.appendChild(efi._gen(content))
+                        }
+                    } else if (!context.nostrict) while(target.firstChild) target.removeChild(target.lastChild);
                 };
-            } else for (var i = 0; i < targets.length; i++) {
-                var content = efi._match('#' + targets[i].id, context.content) || efi._match(targets[i].className, context.content);
-                if (content) targets[i].innerHTML = content;
-                else if (!context.nostrict) targets[i].innerHTML = '';
-            };
+            }
         }
     }
 }
@@ -110,9 +172,40 @@ function cleanup() {
     if (efi && elm) {
         var context = efi._match('#' + elm.id, efi) || efi._match(elm.className, efi);
         if (context) {
+        	context = context.v;
             var targets = context.target ? efi._getElements(context.type, context.target, elm) : [elm];
-            if (targets) for (var i = 0; i < targets.length; i++) {
-                targets[i].innerHTML = '';
+            if (targets) if (context.self) {
+                var content = context.content[elm.getAttribute('efi-status')];
+                if (content) {
+                    elm.removeAttribute('efi-status');
+	                for (var i = 0; i < targets.length; i++) {
+	                    var flag = content.flag, target = targets[i];
+	                    if (flag < 3) {
+	                        var c = target.getAttribute('efi-origin');
+	                        if (c) target.innerText = c;
+	                        else while(target.firstChild) target.removeChild(target.lastChild);
+	                    } else {
+	                        if (flag == 3) while(target.firstChild) target.removeChild(target.lastChild);
+	                        else if (flag == 4) target.removeChild(target.firstChild);
+	                        else target.removeChild(target.lastChild);
+	                    }
+	                };
+                }
+            } else for (var i = 0; i < targets.length; i++) {
+                var target = targets[i], content = context.content[target.getAttribute('efi-status')];
+                if (content) {
+                    target.removeAttribute('efi-status');
+                	var flag = content.flag;
+                	if (flag < 3) {
+                        var c = target.getAttribute('efi-origin');
+                        if (c) target.innerText = c;
+                        else while(target.firstChild) target.removeChild(target.lastChild);
+                    } else {
+                        if (flag == 3) while(target.firstChild) target.removeChild(target.lastChild);
+                        else if (flag == 4) target.removeChild(target.firstChild);
+                        else target.removeChild(target.lastChild);
+                    }
+                };
             };
         }
     }
